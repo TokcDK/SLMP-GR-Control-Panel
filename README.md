@@ -11,4 +11,4 @@ Launcher for SLMP-GR
 
 ![alt text](https://i.imgur.com/0GFErxb.jpg)
 
-![alt text](https://i.imgur.com/diIohc4.jpg)
+![alt text](https://i.imgur.com/Bm2bETT.jpg)
