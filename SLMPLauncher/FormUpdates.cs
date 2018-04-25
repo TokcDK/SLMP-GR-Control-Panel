@@ -425,10 +425,9 @@ namespace SLMPLauncher
         }
         private void unpackUpdates(bool readyDL)
         {
-            FuncMisc.unpackRAR(pathUpdateFolder + "file" + numberSelectFile + ".rar");
             for (int i = 1; i <= 200; i++)
             {
-                if (FuncParser.keyExists(pathUpdateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_delete_file_" + i.ToString()) && !FuncParser.stringRead(pathUpdateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_delete_file_" + i.ToString()).Contains(".."))
+                if (FuncParser.keyExists(pathUpdateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_delete_file_" + i.ToString()))
                 {
                     FuncFiles.deleteAny(FormMain.pathGameFolder + FuncParser.stringRead(pathUpdateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_delete_file_" + i.ToString()));
                 }
@@ -437,6 +436,7 @@ namespace SLMPLauncher
                     break;
                 }
             }
+            FuncMisc.unpackRAR(pathUpdateFolder + "file" + numberSelectFile + ".rar");
             FuncParser.iniWrite(FormMain.pathLauncherINI, "Updates", "Update_" + numberSelectFile + "_Version", FuncParser.stringRead(pathUpdateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_version"));
             comboBox1_SelectedIndexChanged(this, new EventArgs());
             if (readyDL)
