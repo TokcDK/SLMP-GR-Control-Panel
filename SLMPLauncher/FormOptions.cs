@@ -677,7 +677,6 @@ namespace SLMPLauncher
         private void comboBoxShadowRes_SelectedIndexChanged(object sender, EventArgs e)
         {
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iShadowMapResolution", comboBoxShadowResTAB.SelectedItem.ToString());
-            FuncSettings.restoreENBShadowBlur();
         }
         private void refreshShadow()
         {

@@ -161,7 +161,6 @@ namespace SLMPLauncher
                 FuncSettings.restoreENBBorderless();
                 FuncSettings.restoreENBVSync();
                 FuncSettings.restoreENBVideoMemory();
-                FuncSettings.restoreENBShadowBlur();
             }
             refreshAllValue();
         }

@@ -205,22 +205,6 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormENB.pathENBLocalINI, "MEMORY", "VideoMemorySizeMb", FuncParser.stringRead(FormMain.pathLauncherINI, "ENB", "MemorySizeMb"));
             }
         }
-        public static void restoreENBShadowBlur()
-        {
-            if (File.Exists(FormENB.pathENBSeriesINI))
-            {
-                if (FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iShadowMapResolution") < 2048)
-                {
-                    FuncParser.iniWrite(FormENB.pathENBSeriesINI, "SHADOW", "ShadowBlurRange", "8.0");
-                    FuncParser.iniWrite(FormENB.pathENBSeriesINI, "SHADOW", "ShadowBlurRangeInterior", "8.0");
-                }
-                else if (FuncParser.stringRead(FormENB.pathENBSeriesINI, "SHADOW", "ShadowBlurRange") == "8.0")
-                {
-                    FuncParser.iniWrite(FormENB.pathENBSeriesINI, "SHADOW", "ShadowBlurRange", "3.0");
-                    FuncParser.iniWrite(FormENB.pathENBSeriesINI, "SHADOW", "ShadowBlurRangeInterior", "3.0");
-                }
-            }
-        }
         public static bool checkENB(bool RemoveENB)
         {
             if (File.Exists(FormMain.pathGameFolder + @"d3d9.dll") && File.Exists(FormMain.pathGameFolder + "enblocal.ini"))
