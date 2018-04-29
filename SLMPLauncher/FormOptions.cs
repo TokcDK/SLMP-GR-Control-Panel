@@ -700,15 +700,15 @@ namespace SLMPLauncher
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 1)
             {
-                setDecals("1", "1", "35", "20", "10", "3");
+                setDecals("1", "1", "35", "20", "25", "25");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 2)
             {
-                setDecals("1", "1", "50", "40", "30", "10");
+                setDecals("1", "1", "50", "40", "50", "50");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 3)
             {
-                setDecals("1", "1", "100", "60", "100", "25");
+                setDecals("1", "1", "100", "60", "100", "100");
             }
         }
         private void setDecals(string bDecals, string bSkinnedDecals, string uMaxSkinDecals, string uMaxSkinDecalsPerActor, string iMaxDecalsPerFrame, string iMaxSkinDecalsPerFrame)
@@ -760,7 +760,7 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBoxPredictFPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FuncParser.iniWrite(FormMain.pathLauncherINI, "Game", "PredictFPS", comboBoxPredictFPS.SelectedItem.ToString());
+            FormMain.predictFPS = FuncParser.stringToInt(comboBoxPredictFPS.SelectedItem.ToString());
             FuncSettings.physicsFPS();
         }
         private void refreshPredictFPS()

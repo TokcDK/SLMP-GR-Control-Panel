@@ -205,7 +205,7 @@ namespace SLMPLauncher
         {
             if (fps)
             {
-                FuncParser.iniWrite(FormMain.pathLauncherINI, "Game", "PredictFPS", comboBox1.SelectedItem.ToString());
+                FormMain.predictFPS = FuncParser.stringToInt(comboBox1.SelectedItem.ToString());
                 FuncSettings.physicsFPS();
             }
         }

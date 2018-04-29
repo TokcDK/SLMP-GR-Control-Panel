@@ -34,6 +34,7 @@ namespace SLMPLauncher
         public static string failedCopy = null;
         public static string failedCreate = null;
         public static int numberStyle = 1;
+        public static int predictFPS = 60;
         public static int settingsPreset = 2;
         public static string customFont = null;
         public static FontStyle customFontStyle = System.Drawing.FontStyle.Regular;
@@ -81,24 +82,24 @@ namespace SLMPLauncher
             Directory.SetCurrentDirectory(pathLauncherFolder);
             if (File.Exists(pathLauncherINI))
             {
-                int Wleft = FuncParser.intRead(pathLauncherINI, "General", "POS_WindowLeft");
-                int Wtop = FuncParser.intRead(pathLauncherINI, "General", "POS_WindowTop");
-                if (Wleft < 0 || Wtop < 0)
+                int wLeft = FuncParser.intRead(pathLauncherINI, "General", "POS_WindowLeft");
+                int wTop = FuncParser.intRead(pathLauncherINI, "General", "POS_WindowTop");
+                if (wLeft < 0 || wTop < 0)
                 {
                     StartPosition = FormStartPosition.CenterScreen;
                 }
                 else
                 {
-                    if (Wleft > (Screen.PrimaryScreen.Bounds.Width - Size.Width))
+                    if (wLeft > (Screen.PrimaryScreen.Bounds.Width - Size.Width))
                     {
-                        Wleft = Screen.PrimaryScreen.Bounds.Width - Size.Width;
+                        wLeft = Screen.PrimaryScreen.Bounds.Width - Size.Width;
                     }
-                    if (Wtop > (Screen.PrimaryScreen.Bounds.Height - Size.Height))
+                    if (wTop > (Screen.PrimaryScreen.Bounds.Height - Size.Height))
                     {
-                        Wtop = Screen.PrimaryScreen.Bounds.Height - Size.Height;
+                        wTop = Screen.PrimaryScreen.Bounds.Height - Size.Height;
                     }
                     StartPosition = FormStartPosition.Manual;
-                    Location = new Point(Wleft, Wtop);
+                    Location = new Point(wLeft, wTop);
                 }
                 if (FuncParser.stringRead(pathLauncherINI, "General", "Language").ToUpper() == "EN")
                 {
@@ -133,14 +134,19 @@ namespace SLMPLauncher
                 {
                     settingsPreset = 2;
                 }
-                if (FileVersionInfo.GetVersionInfo(pathLauncherFolder + "SLMPLauncher.exe").ProductVersion != FuncParser.stringRead(pathLauncherINI, "General", "Version_CP"))
-                {
-                    FuncParser.iniWrite(pathLauncherINI, "General", "Version_CP", FileVersionInfo.GetVersionInfo(pathLauncherFolder + "SLMPLauncher.exe").ProductVersion);
-                }
                 numberStyle = FuncParser.intRead(pathLauncherINI, "General", "NumberStyle");
                 if (numberStyle < 1 || numberStyle > 2)
                 {
                     numberStyle = 1;
+                }
+                predictFPS = FuncParser.intRead(pathLauncherINI, "Game", "PredictFPS");
+                if (predictFPS < 30 || predictFPS > 240)
+                {
+                    predictFPS = 60;
+                }
+                if (FileVersionInfo.GetVersionInfo(pathLauncherFolder + "SLMPLauncher.exe").ProductVersion != FuncParser.stringRead(pathLauncherINI, "General", "Version_CP"))
+                {
+                    FuncParser.iniWrite(pathLauncherINI, "General", "Version_CP", FileVersionInfo.GetVersionInfo(pathLauncherFolder + "SLMPLauncher.exe").ProductVersion);
                 }
             }
             else
@@ -203,6 +209,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(pathLauncherINI, "General", "SettingsPreset", settingsPreset.ToString());
                 FuncParser.iniWrite(pathLauncherINI, "General", "NumberStyle", numberStyle.ToString());
                 FuncParser.iniWrite(pathLauncherINI, "General", "Language", langTranslate);
+                FuncParser.iniWrite(pathLauncherINI, "Game", "PredictFPS", predictFPS.ToString());
                 if (Top >= 0 && Left >= 0)
                 {
                     FuncParser.iniWrite(pathLauncherINI, "General", "POS_WindowTop", Top.ToString());

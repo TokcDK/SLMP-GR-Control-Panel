@@ -79,8 +79,8 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecals", "35");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "20");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "10");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "3");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "25");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "25");
             }
             else if (value == 2)
             {
@@ -117,8 +117,8 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecals", "50");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "40");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "30");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "10");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "50");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "50");
             }
             else if (value == 3)
             {
@@ -156,7 +156,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecals", "100");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "60");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "100");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "25");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "100");
             }
             FormMain.settingsPreset = value;
             checkENB(false);
@@ -164,7 +164,7 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static void physicsFPS()
         {
-            FuncParser.iniWrite(FormMain.pathSkyrimINI, "HAVOK", "fMaxTime", (((double)1 / FuncParser.intRead(FormMain.pathLauncherINI, "Game", "PredictFPS")).ToString() + "000000").Replace(",", ".").Remove(6));
+            FuncParser.iniWrite(FormMain.pathSkyrimINI, "HAVOK", "fMaxTime", (((double)1 / FormMain.predictFPS).ToString() + "000000").Replace(",", ".").Remove(6));
             restoreENBLimit();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -172,7 +172,7 @@ namespace SLMPLauncher
         {
             if (File.Exists(FormENB.pathENBLocalINI))
             {
-                FuncParser.iniWrite(FormENB.pathENBLocalINI, "LIMITER", "FPSLimit", FuncParser.stringRead(FormMain.pathLauncherINI, "Game", "PredictFPS") + ".0");
+                FuncParser.iniWrite(FormENB.pathENBLocalINI, "LIMITER", "FPSLimit", FormMain.predictFPS.ToString() + ".0");
             }
         }
         public static void restoreENBAdapter()

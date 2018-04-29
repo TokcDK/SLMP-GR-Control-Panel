@@ -23,7 +23,7 @@ namespace SLMPLauncher
             {
                 refreshCB2();
             }
-            if (FuncParser.stringRead(FormMain.pathLauncherINI, "General", "HideWebButtons") == "true")
+            if (FuncParser.stringRead(FormMain.pathLauncherINI, "General", "HideWebButtons").ToLower() == "true")
             {
                 ClientSize = new System.Drawing.Size(232, 60);
                 label1.Size = new System.Drawing.Size(232, 60);
