@@ -100,7 +100,7 @@ namespace SLMPLauncher
             button_Restore.Text = "Restore";
             button_Ultra.Text = "Ultra";
             comboBoxDecalsTAB.Items.Clear();
-            comboBoxDecalsTAB.Items.AddRange(new object[] { "No/Low", "Medium/Medium", "Hight/Hight", "Ultra/Ultra" });
+            comboBoxDecalsTAB.Items.AddRange(new object[] { "No / Low", "Medium / Medium", "Hight / Hight", "Ultra / Ultra" });
             comboBoxLODObjectsTAB.Items.Clear();
             comboBoxLODObjectsTAB.Items.AddRange(new object[] { "Low", "Medium", "Hight", "Ultra" });
             comboBoxTexturesTAB.Items.Clear();
@@ -115,7 +115,7 @@ namespace SLMPLauncher
             label14TAB.Text = "Textures quality:";
             label15TAB.Text = "Shadow:";
             label16TAB.Text = "Shadow resolution:";
-            label17TAB.Text = "Decals/Particles:";
+            label17TAB.Text = "Decals / Particles:";
             label18TAB.Text = "Window mode:";
             label19TAB.Text = "V-Sync:";
             label2.Text = "Presets";
@@ -730,19 +730,19 @@ namespace SLMPLauncher
         {
             if (comboBoxLODObjectsTAB.SelectedIndex == 0)
             {
-                setLODObjects("12500.0000", "75000.0000", "25000.0000", "15000.0000", "0.4000", "3500.0000", "50000");
+                setLODObjects("12500.0000", "75000.0000", "25000.0000", "15000.0000", "0.4000", "3500.0000", "50000.0000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 1)
             {
-                setLODObjects("25000.0000", "100000.0000", "32768.0000", "20480.0000", "0.7500", "4000.0000", "150000");
+                setLODObjects("25000.0000", "100000.0000", "32768.0000", "20480.0000", "0.7500", "4000.0000", "150000.0000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 2)
             {
-                setLODObjects("40000.0000", "150000.0000", "40000.0000", "25000.0000", "1.1000", "5000.0000", "300000");
+                setLODObjects("40000.0000", "150000.0000", "40000.0000", "25000.0000", "1.1000", "5000.0000", "300000.0000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 3)
             {
-                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "10000000.0000", "600000");
+                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "10000000.0000", "600000.0000");
             }
         }
         private void setLODObjects(string fTreeLoadDistance, string fBlockMaximumDistance, string fBlockLevel1Distance, string fBlockLevel0Distance, string fSplitDistanceMult, string fTreesMidLODSwitchDist, string fSkyCellRefFadeDistance)
