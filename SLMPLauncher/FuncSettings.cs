@@ -44,6 +44,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "0");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", "250");
             }
             else if (value == 1)
             {
@@ -83,6 +84,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "20");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "20");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "20");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", "500");
             }
             else if (value == 2)
             {
@@ -122,6 +124,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "40");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "50");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "50");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", "750");
             }
             else if (value == 3)
             {
@@ -161,6 +164,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", "60");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", "100");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", "100");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", "950");
             }
             FormMain.settingsPreset = value;
             checkENB(false);

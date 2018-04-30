@@ -812,7 +812,7 @@
             this.label17TAB.Name = "label17TAB";
             this.label17TAB.Size = new System.Drawing.Size(176, 18);
             this.label17TAB.TabIndex = 13;
-            this.label17TAB.Text = "Частицы:";
+            this.label17TAB.Text = "Частицы/Декалы:";
             this.label17TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxDecalsTAB
@@ -821,10 +821,10 @@
             this.comboBoxDecalsTAB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxDecalsTAB.FormattingEnabled = true;
             this.comboBoxDecalsTAB.Items.AddRange(new object[] {
-            "Нет",
-            "Среднее",
-            "Высоко",
-            "Ультра"});
+            "Нет/Низко",
+            "Среднее/Среднее",
+            "Высоко/Высоко",
+            "Ультра/Ультра"});
             this.comboBoxDecalsTAB.Location = new System.Drawing.Point(7, 378);
             this.comboBoxDecalsTAB.Name = "comboBoxDecalsTAB";
             this.comboBoxDecalsTAB.Size = new System.Drawing.Size(168, 23);

@@ -100,7 +100,7 @@ namespace SLMPLauncher
             button_Restore.Text = "Restore";
             button_Ultra.Text = "Ultra";
             comboBoxDecalsTAB.Items.Clear();
-            comboBoxDecalsTAB.Items.AddRange(new object[] { "No", "Medium", "Hight", "Ultra" });
+            comboBoxDecalsTAB.Items.AddRange(new object[] { "No/Low", "Medium/Medium", "Hight/Hight", "Ultra/Ultra" });
             comboBoxLODObjectsTAB.Items.Clear();
             comboBoxLODObjectsTAB.Items.AddRange(new object[] { "Low", "Medium", "Hight", "Ultra" });
             comboBoxTexturesTAB.Items.Clear();
@@ -115,7 +115,7 @@ namespace SLMPLauncher
             label14TAB.Text = "Textures quality:";
             label15TAB.Text = "Shadow:";
             label16TAB.Text = "Shadow resolution:";
-            label17TAB.Text = "Particles:";
+            label17TAB.Text = "Particles/Decals:";
             label18TAB.Text = "Window mode:";
             label19TAB.Text = "V-Sync:";
             label2.Text = "Presets";
@@ -696,22 +696,22 @@ namespace SLMPLauncher
         {
             if (comboBoxDecalsTAB.SelectedIndex == 0)
             {
-                setDecals("0", "0", "0", "0", "0", "0");
+                setDecals("0", "0", "0", "0", "0", "0", "250");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 1)
             {
-                setDecals("1", "1", "35", "20", "20", "20");
+                setDecals("1", "1", "35", "20", "20", "20", "500");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 2)
             {
-                setDecals("1", "1", "50", "40", "50", "50");
+                setDecals("1", "1", "50", "40", "50", "50", "750");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 3)
             {
-                setDecals("1", "1", "100", "60", "100", "100");
+                setDecals("1", "1", "100", "60", "100", "100", "950");
             }
         }
-        private void setDecals(string bDecals, string bSkinnedDecals, string uMaxSkinDecals, string uMaxSkinDecalsPerActor, string iMaxDecalsPerFrame, string iMaxSkinDecalsPerFrame)
+        private void setDecals(string bDecals, string bSkinnedDecals, string uMaxSkinDecals, string uMaxSkinDecalsPerActor, string iMaxDecalsPerFrame, string iMaxSkinDecalsPerFrame, string iMaxDesired)
         {
             FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bDecals", bDecals);
             FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", bSkinnedDecals);
@@ -719,6 +719,7 @@ namespace SLMPLauncher
             FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecalsPerActor", uMaxSkinDecalsPerActor);
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame", iMaxDecalsPerFrame);
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxSkinDecalsPerFrame", iMaxSkinDecalsPerFrame);
+            FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", iMaxDesired);
         }
         private void refreshDecals()
         {
