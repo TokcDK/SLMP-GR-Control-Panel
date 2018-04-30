@@ -89,6 +89,7 @@
         private System.Windows.Forms.Label label40TAB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxPredictFPS;
+        private System.Windows.Forms.Timer timer2;
 
         protected override void Dispose(bool disposing)
         {
@@ -878,13 +879,13 @@
             this.trackBarObjectsTAB.LargeChange = 1;
             this.trackBarObjectsTAB.Location = new System.Drawing.Point(9, 144);
             this.trackBarObjectsTAB.Maximum = 15;
-            this.trackBarObjectsTAB.Minimum = 2;
+            this.trackBarObjectsTAB.Minimum = 1;
             this.trackBarObjectsTAB.Name = "trackBarObjectsTAB";
             this.trackBarObjectsTAB.Size = new System.Drawing.Size(164, 45);
             this.trackBarObjectsTAB.TabIndex = 13;
             this.trackBarObjectsTAB.TabStop = false;
             this.trackBarObjectsTAB.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBarObjectsTAB.Value = 4;
+            this.trackBarObjectsTAB.Value = 3;
             this.trackBarObjectsTAB.Visible = false;
             this.trackBarObjectsTAB.Scroll += new System.EventHandler(this.trackBarObjects_Scroll);
             // 
@@ -1467,8 +1468,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private System.Windows.Forms.Timer timer2;
+        }     
     }
 }

@@ -39,6 +39,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button_AutoMemory;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label16;
 
         protected override void Dispose(bool disposing)
         {
@@ -669,7 +670,5 @@
             this.ResumeLayout(false);
 
 		}
-
-        private System.Windows.Forms.Label label16;
     }
 }

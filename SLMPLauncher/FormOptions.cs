@@ -700,7 +700,7 @@ namespace SLMPLauncher
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 1)
             {
-                setDecals("1", "1", "35", "20", "25", "25");
+                setDecals("1", "1", "35", "20", "20", "20");
             }
             else if (comboBoxDecalsTAB.SelectedIndex == 2)
             {
@@ -722,29 +722,29 @@ namespace SLMPLauncher
         }
         private void refreshDecals()
         {
-            FuncMisc.refreshComboBox(comboBoxDecalsTAB, new List<double>() { 0, 10, 30, 100 }, FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame"), false, comboBoxDecals_SelectedIndexChanged);
+            FuncMisc.refreshComboBox(comboBoxDecalsTAB, new List<double>() { 0, 20, 50, 100 }, FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iMaxDecalsPerFrame"), false, comboBoxDecals_SelectedIndexChanged);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBoxLODObjects_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxLODObjectsTAB.SelectedIndex == 0)
             {
-                setLODObjects("12500.0000", "75000.0000", "25000.0000", "15000.0000", "0.4000", "3500.0000");
+                setLODObjects("12500.0000", "75000.0000", "25000.0000", "15000.0000", "0.4000", "3500.0000", "50000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 1)
             {
-                setLODObjects("25000.0000", "100000.0000", "32768.0000", "20480.0000", "0.7500", "4000.0000");
+                setLODObjects("25000.0000", "100000.0000", "32768.0000", "20480.0000", "0.7500", "4000.0000", "150000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 2)
             {
-                setLODObjects("40000.0000", "150000.0000", "40000.0000", "25000.0000", "1.1000", "5000.0000");
+                setLODObjects("40000.0000", "150000.0000", "40000.0000", "25000.0000", "1.1000", "5000.0000", "300000");
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 3)
             {
-                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "10000000.0000");
+                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "10000000.0000", "600000");
             }
         }
-        private void setLODObjects(string fTreeLoadDistance, string fBlockMaximumDistance, string fBlockLevel1Distance, string fBlockLevel0Distance, string fSplitDistanceMult, string fTreesMidLODSwitchDist)
+        private void setLODObjects(string fTreeLoadDistance, string fBlockMaximumDistance, string fBlockLevel1Distance, string fBlockLevel0Distance, string fSplitDistanceMult, string fTreesMidLODSwitchDist, string fSkyCellRefFadeDistance)
         {
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fTreeLoadDistance", fTreeLoadDistance);
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fBlockMaximumDistance", fBlockMaximumDistance);
@@ -752,6 +752,7 @@ namespace SLMPLauncher
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fBlockLevel0Distance", fBlockLevel0Distance);
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fSplitDistanceMult", fSplitDistanceMult);
             FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fTreesMidLODSwitchDist", fTreesMidLODSwitchDist);
+            FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "MAIN", "fSkyCellRefFadeDistance", fSkyCellRefFadeDistance);
         }
         private void refreshLODObjects()
         {
@@ -884,19 +885,19 @@ namespace SLMPLauncher
         {
             if (hideobjects)
             {
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel2FadeDist", "10000000.0000");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "10000000.0000");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "16896.0000");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel2FadeDist", "16896.0000");
             }
             else
             {
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel2FadeDist", "5000.0000");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "5000.0000");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "4096.0000");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel2FadeDist", "3072.0000");
             }
             refreshHideObjects();
         }
         private void refreshHideObjects()
         {
-            hideobjects = FuncMisc.refreshButton(button_HideObjectsTAB, FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "5000.0000", false);
+            hideobjects = FuncMisc.refreshButton(button_HideObjectsTAB, FormMain.pathSkyrimPrefsINI, "Display", "fMeshLODLevel1FadeDist", "4096.0000", false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void trackBarGrass_Scroll(object sender, EventArgs e)
