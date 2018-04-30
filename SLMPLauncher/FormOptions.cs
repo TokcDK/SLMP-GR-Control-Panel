@@ -115,7 +115,7 @@ namespace SLMPLauncher
             label14TAB.Text = "Textures quality:";
             label15TAB.Text = "Shadow:";
             label16TAB.Text = "Shadow resolution:";
-            label17TAB.Text = "Particles/Decals:";
+            label17TAB.Text = "Decals/Particles:";
             label18TAB.Text = "Window mode:";
             label19TAB.Text = "V-Sync:";
             label2.Text = "Presets";

@@ -812,7 +812,7 @@
             this.label17TAB.Name = "label17TAB";
             this.label17TAB.Size = new System.Drawing.Size(176, 18);
             this.label17TAB.TabIndex = 13;
-            this.label17TAB.Text = "Частицы/Декалы:";
+            this.label17TAB.Text = "Декалы/Частицы:";
             this.label17TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxDecalsTAB
