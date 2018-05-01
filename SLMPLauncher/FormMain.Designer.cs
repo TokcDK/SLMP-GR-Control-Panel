@@ -61,6 +61,7 @@
             this.button_Options = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Help = new System.Windows.Forms.Button();
+            this.button_MyDocs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_ClearDirectory
@@ -77,7 +78,7 @@
             this.button_ClearDirectory.Location = new System.Drawing.Point(298, 84);
             this.button_ClearDirectory.Name = "button_ClearDirectory";
             this.button_ClearDirectory.Size = new System.Drawing.Size(116, 30);
-            this.button_ClearDirectory.TabIndex = 9;
+            this.button_ClearDirectory.TabIndex = 10;
             this.button_ClearDirectory.TabStop = false;
             this.button_ClearDirectory.Text = "Очистка";
             this.button_ClearDirectory.UseVisualStyleBackColor = false;
@@ -99,7 +100,7 @@
             this.button_ResetSettings.Location = new System.Drawing.Point(298, 48);
             this.button_ResetSettings.Name = "button_ResetSettings";
             this.button_ResetSettings.Size = new System.Drawing.Size(178, 30);
-            this.button_ResetSettings.TabIndex = 8;
+            this.button_ResetSettings.TabIndex = 9;
             this.button_ResetSettings.TabStop = false;
             this.button_ResetSettings.Text = "Сброс Настроек";
             this.button_ResetSettings.UseVisualStyleBackColor = false;
@@ -120,7 +121,7 @@
             this.button_DSRStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_DSRStart.Location = new System.Drawing.Point(12, 84);
             this.button_DSRStart.Name = "button_DSRStart";
-            this.button_DSRStart.Size = new System.Drawing.Size(84, 30);
+            this.button_DSRStart.Size = new System.Drawing.Size(86, 30);
             this.button_DSRStart.TabIndex = 2;
             this.button_DSRStart.TabStop = false;
             this.button_DSRStart.Text = "DSR";
@@ -140,10 +141,10 @@
             this.button_RemPrograms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_RemPrograms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_RemPrograms.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_RemPrograms.Location = new System.Drawing.Point(298, 120);
+            this.button_RemPrograms.Location = new System.Drawing.Point(12, 192);
             this.button_RemPrograms.Name = "button_RemPrograms";
             this.button_RemPrograms.Size = new System.Drawing.Size(178, 30);
-            this.button_RemPrograms.TabIndex = 12;
+            this.button_RemPrograms.TabIndex = 7;
             this.button_RemPrograms.TabStop = false;
             this.button_RemPrograms.Text = "Программы";
             this.button_RemPrograms.UseVisualStyleBackColor = false;
@@ -184,12 +185,12 @@
             this.button_ProgrammsFolder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ProgrammsFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ProgrammsFolder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ProgrammsFolder.Location = new System.Drawing.Point(12, 156);
+            this.button_ProgrammsFolder.Location = new System.Drawing.Point(298, 156);
             this.button_ProgrammsFolder.Name = "button_ProgrammsFolder";
             this.button_ProgrammsFolder.Size = new System.Drawing.Size(178, 30);
-            this.button_ProgrammsFolder.TabIndex = 5;
+            this.button_ProgrammsFolder.TabIndex = 14;
             this.button_ProgrammsFolder.TabStop = false;
-            this.button_ProgrammsFolder.Text = "Все программы";
+            this.button_ProgrammsFolder.Text = "Все Программы";
             this.button_ProgrammsFolder.UseVisualStyleBackColor = false;
             this.button_ProgrammsFolder.Click += new System.EventHandler(this.button_ProgrammsFolder_Click);
             this.button_ProgrammsFolder.MouseEnter += new System.EventHandler(this.button_MouseEnter);
@@ -206,10 +207,10 @@
             this.button_GameDirectory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_GameDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_GameDirectory.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_GameDirectory.Location = new System.Drawing.Point(12, 192);
+            this.button_GameDirectory.Location = new System.Drawing.Point(298, 192);
             this.button_GameDirectory.Name = "button_GameDirectory";
             this.button_GameDirectory.Size = new System.Drawing.Size(178, 30);
-            this.button_GameDirectory.TabIndex = 6;
+            this.button_GameDirectory.TabIndex = 15;
             this.button_GameDirectory.TabStop = false;
             this.button_GameDirectory.Text = "Директория Игры";
             this.button_GameDirectory.UseVisualStyleBackColor = false;
@@ -220,7 +221,7 @@
             // button_ENBmenu
             // 
             this.button_ENBmenu.BackColor = System.Drawing.Color.Transparent;
-            this.button_ENBmenu.BackgroundImage = global::SLMPLauncher.Properties.Resources._1_buttonFull;
+            this.button_ENBmenu.BackgroundImage = global::SLMPLauncher.Properties.Resources._1_buttonHalf;
             this.button_ENBmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_ENBmenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_ENBmenu.FlatAppearance.BorderSize = 0;
@@ -228,16 +229,16 @@
             this.button_ENBmenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ENBmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ENBmenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ENBmenu.Location = new System.Drawing.Point(298, 192);
+            this.button_ENBmenu.Location = new System.Drawing.Point(12, 156);
             this.button_ENBmenu.Name = "button_ENBmenu";
-            this.button_ENBmenu.Size = new System.Drawing.Size(178, 30);
-            this.button_ENBmenu.TabIndex = 14;
+            this.button_ENBmenu.Size = new System.Drawing.Size(86, 30);
+            this.button_ENBmenu.TabIndex = 5;
             this.button_ENBmenu.TabStop = false;
-            this.button_ENBmenu.Text = "ENB Меню";
+            this.button_ENBmenu.Text = "ENB";
             this.button_ENBmenu.UseVisualStyleBackColor = false;
             this.button_ENBmenu.Click += new System.EventHandler(this.button_ENBmenu_Click);
-            this.button_ENBmenu.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-            this.button_ENBmenu.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            this.button_ENBmenu.MouseEnter += new System.EventHandler(this.buttonH_MouseEnter);
+            this.button_ENBmenu.MouseLeave += new System.EventHandler(this.buttonH_MouseLeave);
             // 
             // button_Skyrim
             // 
@@ -253,7 +254,7 @@
             this.button_Skyrim.Location = new System.Drawing.Point(197, 48);
             this.button_Skyrim.Name = "button_Skyrim";
             this.button_Skyrim.Size = new System.Drawing.Size(94, 174);
-            this.button_Skyrim.TabIndex = 7;
+            this.button_Skyrim.TabIndex = 8;
             this.button_Skyrim.TabStop = false;
             this.button_Skyrim.UseVisualStyleBackColor = false;
             this.button_Skyrim.Click += new System.EventHandler(this.button_Skyrim_Click);
@@ -271,9 +272,9 @@
             this.button_FNISStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_FNISStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_FNISStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_FNISStart.Location = new System.Drawing.Point(106, 84);
+            this.button_FNISStart.Location = new System.Drawing.Point(104, 84);
             this.button_FNISStart.Name = "button_FNISStart";
-            this.button_FNISStart.Size = new System.Drawing.Size(84, 30);
+            this.button_FNISStart.Size = new System.Drawing.Size(86, 30);
             this.button_FNISStart.TabIndex = 3;
             this.button_FNISStart.TabStop = false;
             this.button_FNISStart.Text = "FNIS";
@@ -293,10 +294,10 @@
             this.button_AddFileToIgnore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_AddFileToIgnore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AddFileToIgnore.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_AddFileToIgnore.Location = new System.Drawing.Point(451, 84);
+            this.button_AddFileToIgnore.Location = new System.Drawing.Point(448, 84);
             this.button_AddFileToIgnore.Name = "button_AddFileToIgnore";
-            this.button_AddFileToIgnore.Size = new System.Drawing.Size(25, 30);
-            this.button_AddFileToIgnore.TabIndex = 11;
+            this.button_AddFileToIgnore.Size = new System.Drawing.Size(28, 30);
+            this.button_AddFileToIgnore.TabIndex = 12;
             this.button_AddFileToIgnore.TabStop = false;
             this.button_AddFileToIgnore.Text = "F";
             this.button_AddFileToIgnore.UseVisualStyleBackColor = false;
@@ -315,10 +316,10 @@
             this.button_AddFolderToIgnore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_AddFolderToIgnore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AddFolderToIgnore.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_AddFolderToIgnore.Location = new System.Drawing.Point(420, 84);
+            this.button_AddFolderToIgnore.Location = new System.Drawing.Point(417, 84);
             this.button_AddFolderToIgnore.Name = "button_AddFolderToIgnore";
-            this.button_AddFolderToIgnore.Size = new System.Drawing.Size(25, 30);
-            this.button_AddFolderToIgnore.TabIndex = 10;
+            this.button_AddFolderToIgnore.Size = new System.Drawing.Size(28, 30);
+            this.button_AddFolderToIgnore.TabIndex = 11;
             this.button_AddFolderToIgnore.TabStop = false;
             this.button_AddFolderToIgnore.Text = "D";
             this.button_AddFolderToIgnore.UseVisualStyleBackColor = false;
@@ -333,7 +334,7 @@
             // button_Mods
             // 
             this.button_Mods.BackColor = System.Drawing.Color.Transparent;
-            this.button_Mods.BackgroundImage = global::SLMPLauncher.Properties.Resources._1_buttonFull;
+            this.button_Mods.BackgroundImage = global::SLMPLauncher.Properties.Resources._1_buttonHalf;
             this.button_Mods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Mods.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_Mods.FlatAppearance.BorderSize = 0;
@@ -341,16 +342,16 @@
             this.button_Mods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_Mods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Mods.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Mods.Location = new System.Drawing.Point(298, 156);
+            this.button_Mods.Location = new System.Drawing.Point(104, 156);
             this.button_Mods.Name = "button_Mods";
-            this.button_Mods.Size = new System.Drawing.Size(178, 30);
-            this.button_Mods.TabIndex = 13;
+            this.button_Mods.Size = new System.Drawing.Size(86, 30);
+            this.button_Mods.TabIndex = 6;
             this.button_Mods.TabStop = false;
             this.button_Mods.Text = "Моды";
             this.button_Mods.UseVisualStyleBackColor = false;
             this.button_Mods.Click += new System.EventHandler(this.button_Mods_Click);
-            this.button_Mods.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-            this.button_Mods.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            this.button_Mods.MouseEnter += new System.EventHandler(this.buttonH_MouseEnter);
+            this.button_Mods.MouseLeave += new System.EventHandler(this.buttonH_MouseLeave);
             // 
             // button_Widget
             // 
@@ -365,7 +366,7 @@
             this.button_Widget.Location = new System.Drawing.Point(43, 12);
             this.button_Widget.Name = "button_Widget";
             this.button_Widget.Size = new System.Drawing.Size(25, 25);
-            this.button_Widget.TabIndex = 16;
+            this.button_Widget.TabIndex = 17;
             this.button_Widget.TabStop = false;
             this.button_Widget.UseVisualStyleBackColor = false;
             this.button_Widget.Click += new System.EventHandler(this.button_Widget_Click);
@@ -385,7 +386,7 @@
             this.button_Minimize.Location = new System.Drawing.Point(420, 12);
             this.button_Minimize.Name = "button_Minimize";
             this.button_Minimize.Size = new System.Drawing.Size(25, 25);
-            this.button_Minimize.TabIndex = 17;
+            this.button_Minimize.TabIndex = 18;
             this.button_Minimize.TabStop = false;
             this.button_Minimize.UseVisualStyleBackColor = false;
             this.button_Minimize.Click += new System.EventHandler(this.button_Minimize_Click);
@@ -405,7 +406,7 @@
             this.button_Close.Location = new System.Drawing.Point(451, 12);
             this.button_Close.Name = "button_Close";
             this.button_Close.Size = new System.Drawing.Size(25, 25);
-            this.button_Close.TabIndex = 18;
+            this.button_Close.TabIndex = 19;
             this.button_Close.TabStop = false;
             this.button_Close.UseVisualStyleBackColor = false;
             this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
@@ -428,7 +429,7 @@
             this.button_Options.Size = new System.Drawing.Size(178, 30);
             this.button_Options.TabIndex = 4;
             this.button_Options.TabStop = false;
-            this.button_Options.Text = "Настройки игры";
+            this.button_Options.Text = "Настройки Игры";
             this.button_Options.UseVisualStyleBackColor = false;
             this.button_Options.Click += new System.EventHandler(this.button_Options_Click);
             this.button_Options.MouseEnter += new System.EventHandler(this.button_MouseEnter);
@@ -459,12 +460,34 @@
             this.button_Help.Location = new System.Drawing.Point(12, 12);
             this.button_Help.Name = "button_Help";
             this.button_Help.Size = new System.Drawing.Size(25, 25);
-            this.button_Help.TabIndex = 15;
+            this.button_Help.TabIndex = 16;
             this.button_Help.TabStop = false;
             this.button_Help.UseVisualStyleBackColor = false;
             this.button_Help.Click += new System.EventHandler(this.button_Help_Click);
             this.button_Help.MouseEnter += new System.EventHandler(this.buttonHelp_MouseEnter);
             this.button_Help.MouseLeave += new System.EventHandler(this.buttonHelp_MouseLeave);
+            // 
+            // button_MyDocs
+            // 
+            this.button_MyDocs.BackColor = System.Drawing.Color.Transparent;
+            this.button_MyDocs.BackgroundImage = global::SLMPLauncher.Properties.Resources._1_buttonFull;
+            this.button_MyDocs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_MyDocs.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_MyDocs.FlatAppearance.BorderSize = 0;
+            this.button_MyDocs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button_MyDocs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_MyDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_MyDocs.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_MyDocs.Location = new System.Drawing.Point(298, 120);
+            this.button_MyDocs.Name = "button_MyDocs";
+            this.button_MyDocs.Size = new System.Drawing.Size(178, 30);
+            this.button_MyDocs.TabIndex = 13;
+            this.button_MyDocs.TabStop = false;
+            this.button_MyDocs.Text = "Мои Документы";
+            this.button_MyDocs.UseVisualStyleBackColor = false;
+            this.button_MyDocs.Click += new System.EventHandler(this.button_MyDocs_Click);
+            this.button_MyDocs.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.button_MyDocs.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // FormMain
             // 
@@ -485,6 +508,7 @@
             this.Controls.Add(this.button_AddFileToIgnore);
             this.Controls.Add(this.button_ENBmenu);
             this.Controls.Add(this.button_GameDirectory);
+            this.Controls.Add(this.button_MyDocs);
             this.Controls.Add(this.button_ProgrammsFolder);
             this.Controls.Add(this.button_WryeBash);
             this.Controls.Add(this.button_RemPrograms);
@@ -504,6 +528,8 @@
             this.ResumeLayout(false);
 
         }
+
+        private System.Windows.Forms.Button button_MyDocs;
     }
 }
 

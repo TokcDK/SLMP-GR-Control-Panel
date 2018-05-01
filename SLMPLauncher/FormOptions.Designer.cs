@@ -90,6 +90,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxPredictFPS;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label6TAB;
+        private System.Windows.Forms.PictureBox pictureBox1TAB;
+        private System.Windows.Forms.PictureBox pictureBox2TAB;
+        private System.Windows.Forms.ComboBox comboBoxWaterReflectTAB;
+        private System.Windows.Forms.PictureBox pictureBox3;   
 
         protected override void Dispose(bool disposing)
         {
@@ -190,6 +195,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxPredictFPS = new System.Windows.Forms.ComboBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label6TAB = new System.Windows.Forms.Label();
+            this.pictureBox1TAB = new System.Windows.Forms.PictureBox();
+            this.pictureBox2TAB = new System.Windows.Forms.PictureBox();
+            this.comboBoxWaterReflectTAB = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -201,6 +211,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActorsTAB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightsTAB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarShadowTAB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1TAB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2TAB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -411,7 +424,7 @@
             this.comboBoxResolutionTAB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxResolutionTAB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxResolutionTAB.FormattingEnabled = true;
-            this.comboBoxResolutionTAB.Location = new System.Drawing.Point(7, 125);
+            this.comboBoxResolutionTAB.Location = new System.Drawing.Point(7, 127);
             this.comboBoxResolutionTAB.Name = "comboBoxResolutionTAB";
             this.comboBoxResolutionTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxResolutionTAB.TabIndex = 13;
@@ -423,7 +436,7 @@
             this.label10TAB.BackColor = System.Drawing.Color.Transparent;
             this.label10TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10TAB.Location = new System.Drawing.Point(3, 105);
+            this.label10TAB.Location = new System.Drawing.Point(3, 107);
             this.label10TAB.Name = "label10TAB";
             this.label10TAB.Size = new System.Drawing.Size(176, 18);
             this.label10TAB.TabIndex = 13;
@@ -534,7 +547,7 @@
             this.button_WindowTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_WindowTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_WindowTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WindowTAB.Location = new System.Drawing.Point(247, 244);
+            this.button_WindowTAB.Location = new System.Drawing.Point(301, 314);
             this.button_WindowTAB.Name = "button_WindowTAB";
             this.button_WindowTAB.Size = new System.Drawing.Size(50, 22);
             this.button_WindowTAB.TabIndex = 13;
@@ -547,24 +560,24 @@
             this.label18TAB.BackColor = System.Drawing.Color.Transparent;
             this.label18TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label18TAB.Location = new System.Drawing.Point(184, 223);
+            this.label18TAB.Location = new System.Drawing.Point(184, 314);
             this.label18TAB.Name = "label18TAB";
-            this.label18TAB.Size = new System.Drawing.Size(176, 18);
+            this.label18TAB.Size = new System.Drawing.Size(107, 18);
             this.label18TAB.TabIndex = 13;
-            this.label18TAB.Text = "Оконный режим:";
-            this.label18TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18TAB.Text = "Оконный:";
+            this.label18TAB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19TAB
             // 
             this.label19TAB.BackColor = System.Drawing.Color.Transparent;
             this.label19TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19TAB.Location = new System.Drawing.Point(184, 268);
+            this.label19TAB.Location = new System.Drawing.Point(184, 286);
             this.label19TAB.Name = "label19TAB";
-            this.label19TAB.Size = new System.Drawing.Size(176, 18);
+            this.label19TAB.Size = new System.Drawing.Size(107, 18);
             this.label19TAB.TabIndex = 13;
-            this.label19TAB.Text = "Верт. синхронизация:";
-            this.label19TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19TAB.Text = "V-Sync:";
+            this.label19TAB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button_VsyncTAB
             // 
@@ -576,7 +589,7 @@
             this.button_VsyncTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_VsyncTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_VsyncTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_VsyncTAB.Location = new System.Drawing.Point(247, 289);
+            this.button_VsyncTAB.Location = new System.Drawing.Point(301, 286);
             this.button_VsyncTAB.Name = "button_VsyncTAB";
             this.button_VsyncTAB.Size = new System.Drawing.Size(50, 22);
             this.button_VsyncTAB.TabIndex = 13;
@@ -589,7 +602,7 @@
             this.label12TAB.BackColor = System.Drawing.Color.Transparent;
             this.label12TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12TAB.Location = new System.Drawing.Point(3, 223);
+            this.label12TAB.Location = new System.Drawing.Point(3, 205);
             this.label12TAB.Name = "label12TAB";
             this.label12TAB.Size = new System.Drawing.Size(176, 18);
             this.label12TAB.TabIndex = 13;
@@ -606,7 +619,7 @@
             "2",
             "4",
             "8"});
-            this.comboBoxAATAB.Location = new System.Drawing.Point(7, 243);
+            this.comboBoxAATAB.Location = new System.Drawing.Point(7, 225);
             this.comboBoxAATAB.Name = "comboBoxAATAB";
             this.comboBoxAATAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxAATAB.TabIndex = 13;
@@ -624,7 +637,7 @@
             "4",
             "8",
             "16"});
-            this.comboBoxAFTAB.Location = new System.Drawing.Point(7, 288);
+            this.comboBoxAFTAB.Location = new System.Drawing.Point(7, 274);
             this.comboBoxAFTAB.Name = "comboBoxAFTAB";
             this.comboBoxAFTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxAFTAB.TabIndex = 13;
@@ -636,7 +649,7 @@
             this.label13TAB.BackColor = System.Drawing.Color.Transparent;
             this.label13TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13TAB.Location = new System.Drawing.Point(3, 268);
+            this.label13TAB.Location = new System.Drawing.Point(3, 254);
             this.label13TAB.Name = "label13TAB";
             this.label13TAB.Size = new System.Drawing.Size(176, 18);
             this.label13TAB.TabIndex = 13;
@@ -648,12 +661,12 @@
             this.label20TAB.BackColor = System.Drawing.Color.Transparent;
             this.label20TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20TAB.Location = new System.Drawing.Point(184, 313);
+            this.label20TAB.Location = new System.Drawing.Point(184, 342);
             this.label20TAB.Name = "label20TAB";
-            this.label20TAB.Size = new System.Drawing.Size(176, 18);
+            this.label20TAB.Size = new System.Drawing.Size(107, 18);
             this.label20TAB.TabIndex = 13;
-            this.label20TAB.Text = "Сглаживание FXAA:";
-            this.label20TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20TAB.Text = "FXAA:";
+            this.label20TAB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button_FXAATAB
             // 
@@ -665,7 +678,7 @@
             this.button_FXAATAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_FXAATAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_FXAATAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_FXAATAB.Location = new System.Drawing.Point(247, 334);
+            this.button_FXAATAB.Location = new System.Drawing.Point(301, 342);
             this.button_FXAATAB.Name = "button_FXAATAB";
             this.button_FXAATAB.Size = new System.Drawing.Size(50, 22);
             this.button_FXAATAB.TabIndex = 13;
@@ -678,7 +691,7 @@
             this.label16TAB.BackColor = System.Drawing.Color.Transparent;
             this.label16TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label16TAB.Location = new System.Drawing.Point(3, 403);
+            this.label16TAB.Location = new System.Drawing.Point(3, 401);
             this.label16TAB.Name = "label16TAB";
             this.label16TAB.Size = new System.Drawing.Size(176, 18);
             this.label16TAB.TabIndex = 13;
@@ -695,7 +708,7 @@
             "1024",
             "2048",
             "4096"});
-            this.comboBoxShadowResTAB.Location = new System.Drawing.Point(7, 423);
+            this.comboBoxShadowResTAB.Location = new System.Drawing.Point(7, 421);
             this.comboBoxShadowResTAB.Name = "comboBoxShadowResTAB";
             this.comboBoxShadowResTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxShadowResTAB.TabIndex = 13;
@@ -707,7 +720,7 @@
             this.label21TAB.BackColor = System.Drawing.Color.Transparent;
             this.label21TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label21TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21TAB.Location = new System.Drawing.Point(184, 358);
+            this.label21TAB.Location = new System.Drawing.Point(184, 372);
             this.label21TAB.Name = "label21TAB";
             this.label21TAB.Size = new System.Drawing.Size(176, 18);
             this.label21TAB.TabIndex = 13;
@@ -718,7 +731,7 @@
             // 
             this.trackBarGrassTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarGrassTAB.LargeChange = 1;
-            this.trackBarGrassTAB.Location = new System.Drawing.Point(190, 398);
+            this.trackBarGrassTAB.Location = new System.Drawing.Point(190, 412);
             this.trackBarGrassTAB.Maximum = 30;
             this.trackBarGrassTAB.Minimum = 1;
             this.trackBarGrassTAB.Name = "trackBarGrassTAB";
@@ -734,7 +747,7 @@
             this.label22TAB.BackColor = System.Drawing.Color.Transparent;
             this.label22TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label22TAB.Location = new System.Drawing.Point(184, 376);
+            this.label22TAB.Location = new System.Drawing.Point(184, 390);
             this.label22TAB.Name = "label22TAB";
             this.label22TAB.Size = new System.Drawing.Size(176, 18);
             this.label22TAB.TabIndex = 13;
@@ -746,7 +759,7 @@
             this.label11TAB.BackColor = System.Drawing.Color.Transparent;
             this.label11TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11TAB.Location = new System.Drawing.Point(184, 105);
+            this.label11TAB.Location = new System.Drawing.Point(184, 107);
             this.label11TAB.Name = "label11TAB";
             this.label11TAB.Size = new System.Drawing.Size(176, 18);
             this.label11TAB.TabIndex = 13;
@@ -767,7 +780,7 @@
             this.label14TAB.BackColor = System.Drawing.Color.Transparent;
             this.label14TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14TAB.Location = new System.Drawing.Point(3, 313);
+            this.label14TAB.Location = new System.Drawing.Point(3, 303);
             this.label14TAB.Name = "label14TAB";
             this.label14TAB.Size = new System.Drawing.Size(176, 18);
             this.label14TAB.TabIndex = 13;
@@ -783,7 +796,7 @@
             "Высоко",
             "Среднее",
             "Низко"});
-            this.comboBoxTexturesTAB.Location = new System.Drawing.Point(7, 333);
+            this.comboBoxTexturesTAB.Location = new System.Drawing.Point(7, 323);
             this.comboBoxTexturesTAB.Name = "comboBoxTexturesTAB";
             this.comboBoxTexturesTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxTexturesTAB.TabIndex = 13;
@@ -795,7 +808,7 @@
             this.label15TAB.BackColor = System.Drawing.Color.Transparent;
             this.label15TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15TAB.Location = new System.Drawing.Point(184, 279);
+            this.label15TAB.Location = new System.Drawing.Point(184, 281);
             this.label15TAB.Name = "label15TAB";
             this.label15TAB.Size = new System.Drawing.Size(176, 18);
             this.label15TAB.TabIndex = 13;
@@ -808,7 +821,7 @@
             this.label17TAB.BackColor = System.Drawing.Color.Transparent;
             this.label17TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label17TAB.Location = new System.Drawing.Point(3, 358);
+            this.label17TAB.Location = new System.Drawing.Point(3, 352);
             this.label17TAB.Name = "label17TAB";
             this.label17TAB.Size = new System.Drawing.Size(176, 18);
             this.label17TAB.TabIndex = 13;
@@ -825,7 +838,7 @@
             "Среднее / Среднее",
             "Высоко / Высоко",
             "Ультра / Ультра"});
-            this.comboBoxDecalsTAB.Location = new System.Drawing.Point(7, 378);
+            this.comboBoxDecalsTAB.Location = new System.Drawing.Point(7, 372);
             this.comboBoxDecalsTAB.Name = "comboBoxDecalsTAB";
             this.comboBoxDecalsTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxDecalsTAB.TabIndex = 13;
@@ -836,7 +849,7 @@
             // 
             this.trackBarGrassDistanceTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarGrassDistanceTAB.LargeChange = 1;
-            this.trackBarGrassDistanceTAB.Location = new System.Drawing.Point(190, 231);
+            this.trackBarGrassDistanceTAB.Location = new System.Drawing.Point(190, 233);
             this.trackBarGrassDistanceTAB.Maximum = 7;
             this.trackBarGrassDistanceTAB.Name = "trackBarGrassDistanceTAB";
             this.trackBarGrassDistanceTAB.Size = new System.Drawing.Size(164, 45);
@@ -852,7 +865,7 @@
             this.label33TAB.BackColor = System.Drawing.Color.Transparent;
             this.label33TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label33TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label33TAB.Location = new System.Drawing.Point(184, 192);
+            this.label33TAB.Location = new System.Drawing.Point(184, 194);
             this.label33TAB.Name = "label33TAB";
             this.label33TAB.Size = new System.Drawing.Size(176, 18);
             this.label33TAB.TabIndex = 13;
@@ -865,7 +878,7 @@
             this.label34TAB.BackColor = System.Drawing.Color.Transparent;
             this.label34TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label34TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label34TAB.Location = new System.Drawing.Point(184, 210);
+            this.label34TAB.Location = new System.Drawing.Point(184, 212);
             this.label34TAB.Name = "label34TAB";
             this.label34TAB.Size = new System.Drawing.Size(176, 18);
             this.label34TAB.TabIndex = 13;
@@ -877,7 +890,7 @@
             // 
             this.trackBarObjectsTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarObjectsTAB.LargeChange = 1;
-            this.trackBarObjectsTAB.Location = new System.Drawing.Point(9, 144);
+            this.trackBarObjectsTAB.Location = new System.Drawing.Point(9, 146);
             this.trackBarObjectsTAB.Maximum = 15;
             this.trackBarObjectsTAB.Minimum = 1;
             this.trackBarObjectsTAB.Name = "trackBarObjectsTAB";
@@ -894,7 +907,7 @@
             this.label27TAB.BackColor = System.Drawing.Color.Transparent;
             this.label27TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label27TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label27TAB.Location = new System.Drawing.Point(3, 105);
+            this.label27TAB.Location = new System.Drawing.Point(3, 107);
             this.label27TAB.Name = "label27TAB";
             this.label27TAB.Size = new System.Drawing.Size(176, 18);
             this.label27TAB.TabIndex = 13;
@@ -907,7 +920,7 @@
             this.label28TAB.BackColor = System.Drawing.Color.Transparent;
             this.label28TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label28TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label28TAB.Location = new System.Drawing.Point(3, 123);
+            this.label28TAB.Location = new System.Drawing.Point(3, 125);
             this.label28TAB.Name = "label28TAB";
             this.label28TAB.Size = new System.Drawing.Size(176, 18);
             this.label28TAB.TabIndex = 13;
@@ -919,7 +932,7 @@
             // 
             this.trackBarItemsTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarItemsTAB.LargeChange = 1;
-            this.trackBarItemsTAB.Location = new System.Drawing.Point(190, 144);
+            this.trackBarItemsTAB.Location = new System.Drawing.Point(190, 146);
             this.trackBarItemsTAB.Maximum = 15;
             this.trackBarItemsTAB.Minimum = 1;
             this.trackBarItemsTAB.Name = "trackBarItemsTAB";
@@ -936,7 +949,7 @@
             this.label29TAB.BackColor = System.Drawing.Color.Transparent;
             this.label29TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label29TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label29TAB.Location = new System.Drawing.Point(184, 105);
+            this.label29TAB.Location = new System.Drawing.Point(184, 107);
             this.label29TAB.Name = "label29TAB";
             this.label29TAB.Size = new System.Drawing.Size(176, 18);
             this.label29TAB.TabIndex = 13;
@@ -949,7 +962,7 @@
             this.label30TAB.BackColor = System.Drawing.Color.Transparent;
             this.label30TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label30TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label30TAB.Location = new System.Drawing.Point(184, 123);
+            this.label30TAB.Location = new System.Drawing.Point(184, 125);
             this.label30TAB.Name = "label30TAB";
             this.label30TAB.Size = new System.Drawing.Size(176, 18);
             this.label30TAB.TabIndex = 13;
@@ -961,7 +974,7 @@
             // 
             this.trackBarActorsTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarActorsTAB.LargeChange = 1;
-            this.trackBarActorsTAB.Location = new System.Drawing.Point(9, 231);
+            this.trackBarActorsTAB.Location = new System.Drawing.Point(9, 233);
             this.trackBarActorsTAB.Maximum = 15;
             this.trackBarActorsTAB.Minimum = 2;
             this.trackBarActorsTAB.Name = "trackBarActorsTAB";
@@ -978,7 +991,7 @@
             this.label31TAB.BackColor = System.Drawing.Color.Transparent;
             this.label31TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label31TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label31TAB.Location = new System.Drawing.Point(3, 192);
+            this.label31TAB.Location = new System.Drawing.Point(3, 194);
             this.label31TAB.Name = "label31TAB";
             this.label31TAB.Size = new System.Drawing.Size(176, 18);
             this.label31TAB.TabIndex = 13;
@@ -991,7 +1004,7 @@
             this.label32TAB.BackColor = System.Drawing.Color.Transparent;
             this.label32TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label32TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label32TAB.Location = new System.Drawing.Point(3, 210);
+            this.label32TAB.Location = new System.Drawing.Point(3, 212);
             this.label32TAB.Name = "label32TAB";
             this.label32TAB.Size = new System.Drawing.Size(176, 18);
             this.label32TAB.TabIndex = 13;
@@ -1003,7 +1016,7 @@
             // 
             this.trackBarLightsTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarLightsTAB.LargeChange = 1;
-            this.trackBarLightsTAB.Location = new System.Drawing.Point(9, 318);
+            this.trackBarLightsTAB.Location = new System.Drawing.Point(9, 320);
             this.trackBarLightsTAB.Maximum = 35;
             this.trackBarLightsTAB.Minimum = 2;
             this.trackBarLightsTAB.Name = "trackBarLightsTAB";
@@ -1020,7 +1033,7 @@
             this.label35TAB.BackColor = System.Drawing.Color.Transparent;
             this.label35TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label35TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label35TAB.Location = new System.Drawing.Point(3, 279);
+            this.label35TAB.Location = new System.Drawing.Point(3, 281);
             this.label35TAB.Name = "label35TAB";
             this.label35TAB.Size = new System.Drawing.Size(176, 18);
             this.label35TAB.TabIndex = 13;
@@ -1033,7 +1046,7 @@
             this.label36TAB.BackColor = System.Drawing.Color.Transparent;
             this.label36TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label36TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label36TAB.Location = new System.Drawing.Point(3, 297);
+            this.label36TAB.Location = new System.Drawing.Point(3, 299);
             this.label36TAB.Name = "label36TAB";
             this.label36TAB.Size = new System.Drawing.Size(176, 18);
             this.label36TAB.TabIndex = 13;
@@ -1051,7 +1064,7 @@
             "Среднее",
             "Высоко",
             "Ультра"});
-            this.comboBoxLODObjectsTAB.Location = new System.Drawing.Point(7, 414);
+            this.comboBoxLODObjectsTAB.Location = new System.Drawing.Point(7, 416);
             this.comboBoxLODObjectsTAB.Name = "comboBoxLODObjectsTAB";
             this.comboBoxLODObjectsTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxLODObjectsTAB.TabIndex = 13;
@@ -1064,7 +1077,7 @@
             this.label37TAB.BackColor = System.Drawing.Color.Transparent;
             this.label37TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label37TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label37TAB.Location = new System.Drawing.Point(3, 366);
+            this.label37TAB.Location = new System.Drawing.Point(3, 368);
             this.label37TAB.Name = "label37TAB";
             this.label37TAB.Size = new System.Drawing.Size(176, 18);
             this.label37TAB.TabIndex = 13;
@@ -1077,7 +1090,7 @@
             this.label38TAB.BackColor = System.Drawing.Color.Transparent;
             this.label38TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label38TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label38TAB.Location = new System.Drawing.Point(184, 366);
+            this.label38TAB.Location = new System.Drawing.Point(184, 368);
             this.label38TAB.Name = "label38TAB";
             this.label38TAB.Size = new System.Drawing.Size(176, 46);
             this.label38TAB.TabIndex = 13;
@@ -1095,7 +1108,7 @@
             this.button_HideObjectsTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_HideObjectsTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_HideObjectsTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_HideObjectsTAB.Location = new System.Drawing.Point(247, 415);
+            this.button_HideObjectsTAB.Location = new System.Drawing.Point(247, 417);
             this.button_HideObjectsTAB.Name = "button_HideObjectsTAB";
             this.button_HideObjectsTAB.Size = new System.Drawing.Size(50, 22);
             this.button_HideObjectsTAB.TabIndex = 13;
@@ -1109,7 +1122,7 @@
             this.label23TAB.BackColor = System.Drawing.Color.Transparent;
             this.label23TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label23TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label23TAB.Location = new System.Drawing.Point(184, 128);
+            this.label23TAB.Location = new System.Drawing.Point(184, 130);
             this.label23TAB.Name = "label23TAB";
             this.label23TAB.Size = new System.Drawing.Size(107, 18);
             this.label23TAB.TabIndex = 13;
@@ -1121,7 +1134,7 @@
             this.label24TAB.BackColor = System.Drawing.Color.Transparent;
             this.label24TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label24TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label24TAB.Location = new System.Drawing.Point(184, 152);
+            this.label24TAB.Location = new System.Drawing.Point(184, 154);
             this.label24TAB.Name = "label24TAB";
             this.label24TAB.Size = new System.Drawing.Size(107, 18);
             this.label24TAB.TabIndex = 13;
@@ -1133,7 +1146,7 @@
             this.label25TAB.BackColor = System.Drawing.Color.Transparent;
             this.label25TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label25TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label25TAB.Location = new System.Drawing.Point(184, 176);
+            this.label25TAB.Location = new System.Drawing.Point(184, 178);
             this.label25TAB.Name = "label25TAB";
             this.label25TAB.Size = new System.Drawing.Size(107, 18);
             this.label25TAB.TabIndex = 13;
@@ -1145,7 +1158,7 @@
             this.label26TAB.BackColor = System.Drawing.Color.Transparent;
             this.label26TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label26TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26TAB.Location = new System.Drawing.Point(184, 200);
+            this.label26TAB.Location = new System.Drawing.Point(184, 202);
             this.label26TAB.Name = "label26TAB";
             this.label26TAB.Size = new System.Drawing.Size(107, 18);
             this.label26TAB.TabIndex = 13;
@@ -1162,7 +1175,7 @@
             this.button_ReflectSkyTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_ReflectSkyTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ReflectSkyTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ReflectSkyTAB.Location = new System.Drawing.Point(301, 128);
+            this.button_ReflectSkyTAB.Location = new System.Drawing.Point(301, 130);
             this.button_ReflectSkyTAB.Name = "button_ReflectSkyTAB";
             this.button_ReflectSkyTAB.Size = new System.Drawing.Size(50, 22);
             this.button_ReflectSkyTAB.TabIndex = 13;
@@ -1180,7 +1193,7 @@
             this.button_ReflectLanscapeTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_ReflectLanscapeTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ReflectLanscapeTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ReflectLanscapeTAB.Location = new System.Drawing.Point(301, 152);
+            this.button_ReflectLanscapeTAB.Location = new System.Drawing.Point(301, 154);
             this.button_ReflectLanscapeTAB.Name = "button_ReflectLanscapeTAB";
             this.button_ReflectLanscapeTAB.Size = new System.Drawing.Size(50, 22);
             this.button_ReflectLanscapeTAB.TabIndex = 13;
@@ -1198,7 +1211,7 @@
             this.button_ReflectObjectsTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_ReflectObjectsTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ReflectObjectsTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ReflectObjectsTAB.Location = new System.Drawing.Point(301, 176);
+            this.button_ReflectObjectsTAB.Location = new System.Drawing.Point(301, 178);
             this.button_ReflectObjectsTAB.Name = "button_ReflectObjectsTAB";
             this.button_ReflectObjectsTAB.Size = new System.Drawing.Size(50, 22);
             this.button_ReflectObjectsTAB.TabIndex = 13;
@@ -1216,7 +1229,7 @@
             this.button_ReflectTreesTAB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_ReflectTreesTAB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_ReflectTreesTAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ReflectTreesTAB.Location = new System.Drawing.Point(301, 200);
+            this.button_ReflectTreesTAB.Location = new System.Drawing.Point(301, 202);
             this.button_ReflectTreesTAB.Name = "button_ReflectTreesTAB";
             this.button_ReflectTreesTAB.Size = new System.Drawing.Size(50, 22);
             this.button_ReflectTreesTAB.TabIndex = 13;
@@ -1266,7 +1279,7 @@
             // 
             this.trackBarShadowTAB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.trackBarShadowTAB.LargeChange = 1;
-            this.trackBarShadowTAB.Location = new System.Drawing.Point(190, 318);
+            this.trackBarShadowTAB.Location = new System.Drawing.Point(190, 320);
             this.trackBarShadowTAB.Maximum = 16;
             this.trackBarShadowTAB.Name = "trackBarShadowTAB";
             this.trackBarShadowTAB.Size = new System.Drawing.Size(164, 45);
@@ -1282,7 +1295,7 @@
             this.label39TAB.BackColor = System.Drawing.Color.Transparent;
             this.label39TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label39TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label39TAB.Location = new System.Drawing.Point(184, 297);
+            this.label39TAB.Location = new System.Drawing.Point(184, 299);
             this.label39TAB.Name = "label39TAB";
             this.label39TAB.Size = new System.Drawing.Size(176, 18);
             this.label39TAB.TabIndex = 13;
@@ -1297,7 +1310,7 @@
             this.comboBoxScreenTAB.FormattingEnabled = true;
             this.comboBoxScreenTAB.Items.AddRange(new object[] {
             "0"});
-            this.comboBoxScreenTAB.Location = new System.Drawing.Point(7, 170);
+            this.comboBoxScreenTAB.Location = new System.Drawing.Point(7, 176);
             this.comboBoxScreenTAB.Name = "comboBoxScreenTAB";
             this.comboBoxScreenTAB.Size = new System.Drawing.Size(168, 23);
             this.comboBoxScreenTAB.TabIndex = 13;
@@ -1309,7 +1322,7 @@
             this.label40TAB.BackColor = System.Drawing.Color.Transparent;
             this.label40TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label40TAB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label40TAB.Location = new System.Drawing.Point(3, 150);
+            this.label40TAB.Location = new System.Drawing.Point(3, 156);
             this.label40TAB.Name = "label40TAB";
             this.label40TAB.Size = new System.Drawing.Size(176, 18);
             this.label40TAB.TabIndex = 13;
@@ -1353,6 +1366,61 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label6TAB
+            // 
+            this.label6TAB.BackColor = System.Drawing.Color.Transparent;
+            this.label6TAB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6TAB.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6TAB.Location = new System.Drawing.Point(184, 226);
+            this.label6TAB.Name = "label6TAB";
+            this.label6TAB.Size = new System.Drawing.Size(176, 18);
+            this.label6TAB.TabIndex = 13;
+            this.label6TAB.Text = "Разрешение:";
+            this.label6TAB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1TAB
+            // 
+            this.pictureBox1TAB.BackgroundImage = global::SLMPLauncher.Properties.Resources.line;
+            this.pictureBox1TAB.Location = new System.Drawing.Point(181, 101);
+            this.pictureBox1TAB.Name = "pictureBox1TAB";
+            this.pictureBox1TAB.Size = new System.Drawing.Size(1, 359);
+            this.pictureBox1TAB.TabIndex = 16;
+            this.pictureBox1TAB.TabStop = false;
+            // 
+            // pictureBox2TAB
+            // 
+            this.pictureBox2TAB.BackgroundImage = global::SLMPLauncher.Properties.Resources.line;
+            this.pictureBox2TAB.Location = new System.Drawing.Point(182, 277);
+            this.pictureBox2TAB.Name = "pictureBox2TAB";
+            this.pictureBox2TAB.Size = new System.Drawing.Size(180, 1);
+            this.pictureBox2TAB.TabIndex = 17;
+            this.pictureBox2TAB.TabStop = false;
+            // 
+            // comboBoxWaterReflectTAB
+            // 
+            this.comboBoxWaterReflectTAB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWaterReflectTAB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxWaterReflectTAB.FormattingEnabled = true;
+            this.comboBoxWaterReflectTAB.Items.AddRange(new object[] {
+            "512",
+            "1024",
+            "2048"});
+            this.comboBoxWaterReflectTAB.Location = new System.Drawing.Point(188, 246);
+            this.comboBoxWaterReflectTAB.Name = "comboBoxWaterReflectTAB";
+            this.comboBoxWaterReflectTAB.Size = new System.Drawing.Size(168, 23);
+            this.comboBoxWaterReflectTAB.TabIndex = 13;
+            this.comboBoxWaterReflectTAB.TabStop = false;
+            this.comboBoxWaterReflectTAB.SelectedIndexChanged += new System.EventHandler(this.comboBoxWaterReflect_SelectedIndexChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::SLMPLauncher.Properties.Resources.line;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 100);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(363, 1);
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1360,12 +1428,6 @@
             this.BackgroundImage = global::SLMPLauncher.Properties.Resources.FormBackgroundNone;
             this.ClientSize = new System.Drawing.Size(658, 653);
             this.ControlBox = false;
-            this.Controls.Add(this.button_Close);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_HideObjectsTAB);
             this.Controls.Add(this.comboBoxLODObjectsTAB);
             this.Controls.Add(this.trackBarLightsTAB);
@@ -1388,6 +1450,15 @@
             this.Controls.Add(this.label29TAB);
             this.Controls.Add(this.label28TAB);
             this.Controls.Add(this.label27TAB);
+            this.Controls.Add(this.pictureBox2TAB);
+            this.Controls.Add(this.pictureBox1TAB);
+            this.Controls.Add(this.button_Close);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.trackBarGrassTAB);
             this.Controls.Add(this.button_VsyncTAB);
             this.Controls.Add(this.button_FXAATAB);
@@ -1399,6 +1470,7 @@
             this.Controls.Add(this.comboBoxTexturesTAB);
             this.Controls.Add(this.comboBoxDecalsTAB);
             this.Controls.Add(this.comboBoxShadowResTAB);
+            this.Controls.Add(this.comboBoxWaterReflectTAB);
             this.Controls.Add(this.comboBoxAFTAB);
             this.Controls.Add(this.comboBoxScreenTAB);
             this.Controls.Add(this.comboBoxAATAB);
@@ -1406,6 +1478,7 @@
             this.Controls.Add(this.label21TAB);
             this.Controls.Add(this.label22TAB);
             this.Controls.Add(this.label19TAB);
+            this.Controls.Add(this.label6TAB);
             this.Controls.Add(this.label13TAB);
             this.Controls.Add(this.label40TAB);
             this.Controls.Add(this.label12TAB);
@@ -1465,9 +1538,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActorsTAB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLightsTAB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarShadowTAB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1TAB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2TAB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }     
+        }  
     }
 }

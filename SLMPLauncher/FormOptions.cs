@@ -108,6 +108,7 @@ namespace SLMPLauncher
             errorDateChange = "Could not change the date the file was modified: ";
             filesName.Text = "Files:";
             grassDensity = "The distance between the grass bushes, the smaller it is, the denser the grass.";
+            label6TAB.Text = "Resolution:";
             label10TAB.Text = "Resolution:";
             label11TAB.Text = "Water reflections:";
             label12TAB.Text = "Antialiasing:";
@@ -116,10 +117,8 @@ namespace SLMPLauncher
             label15TAB.Text = "Shadow:";
             label16TAB.Text = "Shadow resolution:";
             label17TAB.Text = "Decals / Particles:";
-            label18TAB.Text = "Window mode:";
-            label19TAB.Text = "V-Sync:";
+            label18TAB.Text = "Window:";
             label2.Text = "Presets";
-            label20TAB.Text = "Antialiasing FXAA:";
             label21TAB.Text = "Grass density:";
             label23TAB.Text = "Sky:";
             label24TAB.Text = "Landscape:";
@@ -159,6 +158,7 @@ namespace SLMPLauncher
             refreshTextures();
             refreshDecals();
             refreshShadow();
+            refreshWaterReflect();
             refreshWaterReflectSky();
             refreshWaterReflectLand();
             refreshWaterReflectObjects();
@@ -742,7 +742,7 @@ namespace SLMPLauncher
             }
             else if (comboBoxLODObjectsTAB.SelectedIndex == 3)
             {
-                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "10000000.0000", "600000.0000");
+                setLODObjects("75000.0000", "250000.0000", "70000.0000", "35000.0000", "1.5000", "16896.0000", "600000.0000");
             }
         }
         private void setLODObjects(string fTreeLoadDistance, string fBlockMaximumDistance, string fBlockLevel1Distance, string fBlockLevel0Distance, string fSplitDistanceMult, string fTreesMidLODSwitchDist, string fSkyCellRefFadeDistance)
@@ -768,6 +768,16 @@ namespace SLMPLauncher
         private void refreshPredictFPS()
         {
             FuncMisc.refreshComboBox(comboBoxPredictFPS, new List<double>() { 0.0333, 0.0166, 0.0133, 0.0111, 0.0083, 0.0069, 0.0041 }, FuncParser.doubleRead(FormMain.pathSkyrimINI, "HAVOK", "fMaxTime"), false, comboBoxPredictFPS_SelectedIndexChanged);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxWaterReflect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth", comboBoxWaterReflectTAB.SelectedItem.ToString());
+            FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectHeight", comboBoxWaterReflectTAB.SelectedItem.ToString());
+        }
+        private void refreshWaterReflect()
+        {
+            FuncMisc.refreshComboBox(comboBoxWaterReflectTAB, new List<double>() { 512, 1024, 2048 }, FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth"), false, comboBoxWaterReflect_SelectedIndexChanged);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_ToggleWeapons_Click(object sender, EventArgs e)
@@ -976,7 +986,7 @@ namespace SLMPLauncher
         {
             foreach (Control line in this.Controls)
             {
-                if ((line is Label || line is Button || line is TrackBar || line is ComboBox) && line.Name.EndsWith("TAB"))
+                if ((line is Label || line is Button || line is TrackBar || line is ComboBox || line is PictureBox) && line.Name.EndsWith("TAB"))
                 {
                     line.Visible = !line.Visible;
                 }

@@ -38,6 +38,9 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODTrees", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectSky", "1");
 
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth", "512");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectHeight", "512");
+
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bDecals", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecals", "0");
@@ -77,6 +80,9 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODObjects", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODTrees", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectSky", "1");
+
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth", "512");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectHeight", "512");
 
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "1");
@@ -118,6 +124,9 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODTrees", "0");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectSky", "1");
 
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth", "1024");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectHeight", "1024");
+
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "uMaxSkinDecals", "50");
@@ -150,13 +159,16 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fBlockLevel1Distance", "70000.0000");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fBlockLevel0Distance", "35000.0000");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "TerrainManager", "fSplitDistanceMult", "1.5000");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fTreesMidLODSwitchDist", "10000000.0000");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "fTreesMidLODSwitchDist", "16896.0000");
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "MAIN", "fSkyCellRefFadeDistance", "600000.0000");
 
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODLand", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODObjects", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectLODTrees", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Water", "bReflectSky", "1");
+
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth", "2048");
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectHeight", "2048");
 
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bDecals", "1");
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Decals", "bSkinnedDecals", "1");

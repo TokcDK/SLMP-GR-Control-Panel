@@ -171,15 +171,15 @@ namespace SLMPLauncher
                 "[General]",
                 "Version_CP=" + FileVersionInfo.GetVersionInfo(Process.GetCurrentProcess().MainModule.FileName).ProductVersion,
                 "HideWebButtons=false",
-                "POS_WindowTop=" + Top,
-                "POS_WindowLeft=" + Left,
+                "POS_WindowTop=" + Top.ToString(),
+                "POS_WindowLeft=" + Left.ToString(),
                 "SettingsPreset=" + settingsPreset.ToString(),
-                "NumberStyle=" + numberStyle,
+                "NumberStyle=" + numberStyle.ToString(),
                 "AspectRatio=",
                 "Language=" + langTranslate,
                 "",
                 "[Game]",
-                "PredictFPS=60",
+                "PredictFPS=" + predictFPS.ToString(),
                 "",
                 "[ENB]",
                 "NightBrightness=0",
@@ -288,6 +288,10 @@ namespace SLMPLauncher
             {
                 Process.Start(pathGameFolder);
             }
+            else
+            {
+                MessageBox.Show(pathGameFolder + notFound);
+            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_ProgrammsFolder_Click(object sender, EventArgs e)
@@ -300,6 +304,19 @@ namespace SLMPLauncher
             else
             {
                 MessageBox.Show(pathPrograms + notFound);
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void button_MyDocs_Click(object sender, EventArgs e)
+        {
+            label1.Focus();
+            if (Directory.Exists(pathMyDoc))
+            {
+                Process.Start(pathMyDoc);
+            }
+            else
+            {
+                MessageBox.Show(pathMyDoc + notFound);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -445,6 +462,14 @@ namespace SLMPLauncher
             form = null;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void button_Mods_Click(object sender, EventArgs e)
+        {
+            label1.Focus();
+            var form = new FormMods();
+            form.ShowDialog();
+            form = null;
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_Skyrim_Click(object sender, EventArgs e)
         {
             label1.Focus();
@@ -489,14 +514,6 @@ namespace SLMPLauncher
         private void processGAMEExited(object sender, EventArgs e)
         {
             unPressButtonEvent(button_Skyrim, BMbuttonlogo, buttonSkyrim_MouseEnter, buttonSkyrim_MouseLeave);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void button_Mods_Click(object sender, EventArgs e)
-        {
-            label1.Focus();
-            var form = new FormMods();
-            form.ShowDialog();
-            form = null;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_Options_Click(object sender, EventArgs e)
@@ -607,9 +624,9 @@ namespace SLMPLauncher
         {
             alreadyExists = "Файл уже существует: ";
             button_ClearDirectory.Text = "Очистка";
-            button_ENBmenu.Text = "ENB Меню";
             button_GameDirectory.Text = "Директория Игры";
             button_Mods.Text = "Моды";
+            button_MyDocs.Text = "Мои Документы";
             button_Options.Text = "Настройки Игры";
             button_ProgrammsFolder.Text = "Все Программы";
             button_RemPrograms.Text = "Программы";
@@ -638,6 +655,7 @@ namespace SLMPLauncher
             toolTip1.SetToolTip(button_FNISStart, "Патчер FNIS. Применять после изменения модов содержащих анимации.");
             toolTip1.SetToolTip(button_GameDirectory, "Открывает папку-директорию игры.");
             toolTip1.SetToolTip(button_Mods, "Установка опциональных модов.");
+            toolTip1.SetToolTip(button_MyDocs, "Открывает папку с ini файлами и сохранениями.");
             toolTip1.SetToolTip(button_Options, "Настройка конфигурации, параметров игры, управление подключаемыми файлами.");
             toolTip1.SetToolTip(button_ProgrammsFolder, "Открывает папку с ярлыками программ для редактирования игры.");
             toolTip1.SetToolTip(button_RemPrograms, "Распаковка различных программ для редактирования игры.");
@@ -651,9 +669,9 @@ namespace SLMPLauncher
         {
             alreadyExists = "File already exists: ";
             button_ClearDirectory.Text = "Clear";
-            button_ENBmenu.Text = "ENB Menu";
             button_GameDirectory.Text = "Game Directory";
             button_Mods.Text = "Mods";
+            button_MyDocs.Text = "My Documents";
             button_Options.Text = "Game Settings";
             button_ProgrammsFolder.Text = "All Programs";
             button_RemPrograms.Text = "Programs";
@@ -682,6 +700,7 @@ namespace SLMPLauncher
             toolTip1.SetToolTip(button_FNISStart, "Patcher FNIS. Apply after the change in the mods containing the animation.");
             toolTip1.SetToolTip(button_GameDirectory, "Opens folder-directory of the game.");
             toolTip1.SetToolTip(button_Mods, "Installing optional mods.");
+            toolTip1.SetToolTip(button_MyDocs, "Opens a folder with ini files and saves.");
             toolTip1.SetToolTip(button_Options, "Configuring the configuration, game settings, managing the connected files.");
             toolTip1.SetToolTip(button_ProgrammsFolder, "Opens a folder with shortcuts for editing games.");
             toolTip1.SetToolTip(button_RemPrograms, "Unpacking various programs for editing games.");
@@ -768,9 +787,10 @@ namespace SLMPLauncher
             button_ClearDirectory.BackgroundImage = BMbuttonClear;
             button_AddFolderToIgnore.BackgroundImage = BMbuttonOne;
             button_AddFileToIgnore.BackgroundImage = BMbuttonOne;
-            button_Mods.BackgroundImage = BMbuttonFull;
+            button_Mods.BackgroundImage = BMbuttonHalf;
+            button_MyDocs.BackgroundImage = BMbuttonFull;
             button_RemPrograms.BackgroundImage = BMbuttonFull;
-            button_ENBmenu.BackgroundImage = BMbuttonFull;
+            button_ENBmenu.BackgroundImage = BMbuttonHalf;
             button_Options.BackgroundImage = BMbuttonFull;
             BackgroundImage = BMBackgroundImage;
         }
