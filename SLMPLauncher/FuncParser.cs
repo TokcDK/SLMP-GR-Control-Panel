@@ -134,6 +134,12 @@ namespace SLMPLauncher
             return value;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        public static bool readAsBool(string path, string section, string key)
+        {
+            string line = stringRead(path, section, key);
+            return line != null && (line == "1" || line.ToLower() == "true");
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static int stringToInt(string input)
         {
             int value = -1;

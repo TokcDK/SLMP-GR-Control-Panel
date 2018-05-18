@@ -25,6 +25,7 @@
         private System.Windows.Forms.Button button_Options;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Help;
+        private System.Windows.Forms.Button button_MyDocs;
 
         protected override void Dispose(bool disposing)
         {
@@ -528,8 +529,6 @@
             this.ResumeLayout(false);
 
         }
-
-        private System.Windows.Forms.Button button_MyDocs;
     }
 }
 

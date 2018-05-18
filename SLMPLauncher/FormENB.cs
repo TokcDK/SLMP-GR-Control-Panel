@@ -104,7 +104,7 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void refreshAllValue()
         {
-            setupENB = FuncSettings.checkENB(false);
+            setupENB = FuncSettings.checkENB();
             refreshMemory();
             refreshAA();
             refreshAF();
@@ -171,7 +171,7 @@ namespace SLMPLauncher
             if (dialogResult == DialogResult.Yes)
             {
                 FuncClear.removeENB();
-                FuncSettings.checkENB(true);
+                FuncSettings.checkENB();
                 refreshAllValue();
             }
         }
@@ -203,7 +203,7 @@ namespace SLMPLauncher
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (fps)
+            if (setupENB && fps)
             {
                 FormMain.predictFPS = FuncParser.stringToInt(comboBox1.SelectedItem.ToString());
                 FuncSettings.physicsFPS();
@@ -212,7 +212,7 @@ namespace SLMPLauncher
         private void refreshFPS()
         {
             fps = FuncMisc.refreshButton(button_FPS, pathENBLocalINI, "LIMITER", "EnableFPSLimit", null, false);
-            if (setupENB)
+            if (setupENB && fps)
             {
                 FuncMisc.refreshComboBox(comboBox1, new List<double>() { 30, 60, 75, 90, 120, 144, 240 }, FuncParser.intRead(pathENBLocalINI, "LIMITER", "FPSLimit"), false, comboBox1_SelectedIndexChanged);
             }
@@ -220,7 +220,7 @@ namespace SLMPLauncher
             {
                 comboBox1.SelectedIndex = -1;
             }
-            comboBox1.Enabled = fps;
+            comboBox1.Enabled = setupENB && fps;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,7 +333,7 @@ namespace SLMPLauncher
         private void refresAutoDetect()
         {
             autovram = FuncMisc.refreshButton(button_AutoMemory, pathENBLocalINI, "MEMORY", "AutodetectVideoMemorySize", null, false);
-            FuncMisc.refreshnumericUpDown(numericUpDown1, pathENBLocalINI, "MEMORY", "VideoMemorySizeMb", numericUpDown1_ValueChanged);
+            FuncMisc.refreshNumericUpDown(numericUpDown1, pathENBLocalINI, "MEMORY", "VideoMemorySizeMb", numericUpDown1_ValueChanged);
             numericUpDown1.Enabled = setupENB && !autovram;
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

@@ -131,7 +131,7 @@ namespace SLMPLauncher
             label33TAB.Text = "Grass:";
             label35TAB.Text = "Lighting:";
             label37TAB.Text = "Far objects:";
-            label38TAB.Text = "Disappearance of far objects:";
+            label38TAB.Text = "Objects details fade:";
             label40TAB.Text = "Display index:";
             label5.Text = "Expected FPS:";
             label7.Text = "Master files:";
@@ -177,17 +177,25 @@ namespace SLMPLauncher
             refreshGrassDistance();
             refreshShadowRange();
             refreshHideObjects();
-            if (FuncSettings.checkENB(false))
+            if (FuncSettings.checkENB())
             {
-                button_FXAATAB.Enabled = false;
                 comboBoxAFTAB.Enabled = false;
-                comboBoxAATAB.Enabled = false;
+                if (!FuncSettings.checkENBoost())
+                {
+                    comboBoxAATAB.Enabled = false;
+                    button_FXAATAB.Enabled = false;
+                }
+                else
+                {
+                    refreshFXAA();
+                    refreshAA();
+                }
             }
             else
             {
+                refreshFXAA();
                 refreshAA();
                 refreshAF();
-                refreshFXAA();
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////

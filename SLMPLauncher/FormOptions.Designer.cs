@@ -1094,7 +1094,7 @@
             this.label38TAB.Name = "label38TAB";
             this.label38TAB.Size = new System.Drawing.Size(176, 46);
             this.label38TAB.TabIndex = 13;
-            this.label38TAB.Text = "Исчезновение дальних объектов:";
+            this.label38TAB.Text = "Исчезновение деталей объектов:";
             this.label38TAB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label38TAB.Visible = false;
             // 

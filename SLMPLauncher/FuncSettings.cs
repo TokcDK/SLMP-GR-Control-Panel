@@ -179,7 +179,7 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Particles", "iMaxDesired", "950");
             }
             FormMain.settingsPreset = value;
-            checkENB(false);
+            checkENB();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static void physicsFPS()
@@ -225,30 +225,32 @@ namespace SLMPLauncher
                 FuncParser.iniWrite(FormENB.pathENBLocalINI, "MEMORY", "VideoMemorySizeMb", FuncParser.stringRead(FormMain.pathLauncherINI, "ENB", "MemorySizeMb"));
             }
         }
-        public static bool checkENB(bool RemoveENB)
+        public static bool checkENBoost()
+        {
+            return FuncParser.readAsBool(FormENB.pathENBLocalINI, "GLOBAL", "UsePatchSpeedhackWithoutGraphics");
+        }
+        public static bool checkENB()
         {
             if (File.Exists(FormMain.pathGameFolder + @"d3d9.dll") && File.Exists(FormMain.pathGameFolder + "enblocal.ini"))
             {
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxAnisotropy", "0");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMultiSample", "0");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFXAAEnabled", "0");
-                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFloatPointRenderTarget", "1");
+                if (!checkENBoost())
+                {
+                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxAnisotropy", "0");
+                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMultiSample", "0");
+                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFXAAEnabled", "0");
+                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFloatPointRenderTarget", "1");
+                }
+                else
+                {
+                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFloatPointRenderTarget", "0");
+                }
                 FuncParser.iniWrite(FormMain.pathSkyrimINI, "Display", "bAllowScreenshot", "0");
                 return true;
             }
             else
             {
-                if (RemoveENB)
-                {
-                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMaxAnisotropy", "16");
-                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "iMultiSample", "2");
-                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFXAAEnabled", "1");
-                }
-                else
-                {
-                    FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFloatPointRenderTarget", "0");
-                    FuncParser.iniWrite(FormMain.pathSkyrimINI, "Display", "bAllowScreenshot", "1");
-                }
+                FuncParser.iniWrite(FormMain.pathSkyrimPrefsINI, "Display", "bFloatPointRenderTarget", "0");
+                FuncParser.iniWrite(FormMain.pathSkyrimINI, "Display", "bAllowScreenshot", "1");
                 return false;
             }
         }

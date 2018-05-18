@@ -15,9 +15,9 @@ namespace SLMPLauncher
             if (FuncParser.keyExists(file, section, parameter))
             {
                 button.Enabled = true;
-                string readString = FuncParser.stringRead(file, section, parameter).ToLower();
+                string readString = FuncParser.stringRead(file, section, parameter);
                 bool toggle = false;
-                toggle = readString != null && (readString == value || readString == "1" || readString == "true");
+                toggle = readString != null && (readString == value || readString == "1" || readString.ToLower() == "true");
                 toggle = invert ? !toggle : toggle;
                 if (toggle)
                 {
@@ -96,7 +96,7 @@ namespace SLMPLauncher
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        public static void refreshnumericUpDown(NumericUpDown numeric, string file, string section, string parametr, EventHandler onchange)
+        public static void refreshNumericUpDown(NumericUpDown numeric, string file, string section, string parametr, EventHandler onchange)
         {
             int value = FuncParser.intRead(file, section, parametr);
             if (onchange != null)
