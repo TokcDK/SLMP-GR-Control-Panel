@@ -39,7 +39,7 @@ namespace SLMPLauncher
             button_ModUnInstall.Text = "UnInstall";
             confirmDelete = "Delete mod?";
             confirmTitle = "Confirm";
-            label3.Text = @"Files from Skyrim\CPFiles:";
+            label3.Text = @"Files from Skyrim\CPFiles";
             noFileSelect = "No file select.";
             noUninstalFile = "No .txt instruction file.";
         }

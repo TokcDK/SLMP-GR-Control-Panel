@@ -13,8 +13,7 @@ namespace SLMPLauncher
         string pathUpdateFolder = FormMain.pathLauncherFolder + @"Updates\";
         string nameUpdateInfo = "UpdateInfo.ini";
         string nameControlPanel = "SLMPLauncher.exe";
-        string nameHostName = "http://www.slmp.ru";
-        string nameDLFolderHost = "/_SLMP-GR/FE/";
+        string nameHostName = FuncParser.stringRead(FormMain.pathLauncherINI, "Updates", "UpdateHost");
         string downloadFileType = null;
         string downloadFileName = null;
         string buttonCvsU_TC = "Проверить";
@@ -264,13 +263,13 @@ namespace SLMPLauncher
             try
             {
                 FuncFiles.creatDirectory(pathUpdateFolder);
-                client.DownloadFileAsync(new Uri(nameHostName + nameDLFolderHost + downloadFileName), pathUpdateFolder + downloadFileName);
+                client.DownloadFileAsync(new Uri(nameHostName + downloadFileName), pathUpdateFolder + downloadFileName);
             }
             catch
             {
                 stopDownload = false;
                 enableDisableButtons();
-                MessageBox.Show(wrongPing + nameHostName + nameDLFolderHost + downloadFileName);
+                MessageBox.Show(wrongPing + nameHostName + downloadFileName);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////

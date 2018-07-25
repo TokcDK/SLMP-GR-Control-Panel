@@ -3,8 +3,6 @@
     partial class FormOptions
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button_ToggleWeapons;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_Papyrus;
         private System.Windows.Forms.Button button_Close;
@@ -108,8 +106,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button_ToggleWeapons = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.button_Papyrus = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
@@ -216,42 +212,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(3, 518);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 18);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Экип. избранное:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button_ToggleWeapons
-            // 
-            this.button_ToggleWeapons.BackColor = System.Drawing.Color.Transparent;
-            this.button_ToggleWeapons.BackgroundImage = global::SLMPLauncher.Properties.Resources.buttonToggleDisable;
-            this.button_ToggleWeapons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_ToggleWeapons.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_ToggleWeapons.FlatAppearance.BorderSize = 0;
-            this.button_ToggleWeapons.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button_ToggleWeapons.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button_ToggleWeapons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ToggleWeapons.Location = new System.Drawing.Point(66, 539);
-            this.button_ToggleWeapons.Name = "button_ToggleWeapons";
-            this.button_ToggleWeapons.Size = new System.Drawing.Size(50, 22);
-            this.button_ToggleWeapons.TabIndex = 7;
-            this.button_ToggleWeapons.TabStop = false;
-            this.button_ToggleWeapons.UseVisualStyleBackColor = false;
-            this.button_ToggleWeapons.Click += new System.EventHandler(this.button_ToggleWeapons_Click);
-            // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(3, 564);
+            this.label9.Location = new System.Drawing.Point(3, 545);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 18);
             this.label9.TabIndex = 13;
@@ -268,7 +234,7 @@
             this.button_Papyrus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button_Papyrus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_Papyrus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Papyrus.Location = new System.Drawing.Point(66, 586);
+            this.button_Papyrus.Location = new System.Drawing.Point(66, 567);
             this.button_Papyrus.Name = "button_Papyrus";
             this.button_Papyrus.Size = new System.Drawing.Size(50, 22);
             this.button_Papyrus.TabIndex = 8;
@@ -376,7 +342,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(516, 10);
+            this.label4.Location = new System.Drawing.Point(516, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 13;
@@ -400,7 +366,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(366, 10);
+            this.label3.Location = new System.Drawing.Point(366, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 18);
             this.label3.TabIndex = 13;
@@ -1334,7 +1300,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(3, 469);
+            this.label5.Location = new System.Drawing.Point(3, 485);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(176, 18);
             this.label5.TabIndex = 13;
@@ -1354,7 +1320,7 @@
             "120",
             "144",
             "240"});
-            this.comboBoxPredictFPS.Location = new System.Drawing.Point(66, 490);
+            this.comboBoxPredictFPS.Location = new System.Drawing.Point(66, 506);
             this.comboBoxPredictFPS.Name = "comboBoxPredictFPS";
             this.comboBoxPredictFPS.Size = new System.Drawing.Size(50, 23);
             this.comboBoxPredictFPS.TabIndex = 13;
@@ -1498,7 +1464,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.button_RedateMods);
             this.Controls.Add(this.button_ActivatedAll);
             this.Controls.Add(this.button_Ultra);
@@ -1511,7 +1476,6 @@
             this.Controls.Add(this.button_Papyrus);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button_ToggleWeapons);
             this.Controls.Add(this.comboBoxPredictFPS);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);

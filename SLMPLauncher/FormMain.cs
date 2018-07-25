@@ -182,7 +182,6 @@ namespace SLMPLauncher
                 "PredictFPS=" + predictFPS.ToString(),
                 "",
                 "[ENB]",
-                "NightBrightness=0",
                 "MemorySizeMb=0",
                 "",
                 "[Font]",
@@ -202,6 +201,7 @@ namespace SLMPLauncher
                 "   Trebuchet MS",
                 "",
                 "[Updates]",
+                "UpdateHost=http://www.slmp.ru/_SLMP-GR/2018CE/"
                 });
             }
             else

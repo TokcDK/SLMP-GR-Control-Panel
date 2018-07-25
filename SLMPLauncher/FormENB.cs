@@ -10,26 +10,23 @@ namespace SLMPLauncher
         public static string pathENBLocalINI = FormMain.pathGameFolder + "enblocal.ini";
         public static string pathENBSeriesINI = FormMain.pathGameFolder + "enbseries.ini";
         string pathENBfolder = FormMain.pathGameFolder + @"Skyrim\ENB\";
-        string ambOcc = "Добавляет дополнительное затенение на объекты, снижает производительность.";
         string compressMemory = "Сжимать видеопамять для уменьшение её объема, снижает производительность.";
         string confirmTitle = "Подтверждение";
-        string dinamicDOF = "Depth Of Field - динамическое размытие заднего фона, фокус.";
         string noFileSelect = "Не выбран файл.";
-        string occlusionCulling = "Occlusion Culling - функция отключения рендеринга скрытых объектов, может вызывать мерцания.";
+        string occlusionCulling = "Отключения рендеринга скрытых объектов, может вызывать мерцания.";
         string removeENBFiles = "Удалить все файлы ENB?";
         string reservedMemory = "Резервирование памяти под эффекты ENB.";
         string waitBuffer = "Ожидание завершения кадра видеоадаптером, снижает производительность.";
-        double nightBrightness = 0;
+        string expandMemory = "Сдвигает адресное пространство игры, может вызывать вылет при первой загрузке.";
         bool aa = false;
         bool af = false;
-        bool ambocc = false;
         bool autovram = false;
         bool compress = false;
-        bool dof = false;
         bool fps = false;
         bool oc = false;
         bool setupENB = false;
         bool waitbuffer = false;
+        bool expandmemory = false;
 
         public FormENB()
         {
@@ -46,16 +43,14 @@ namespace SLMPLauncher
             }
             toolTip1.SetToolTip(label3, reservedMemory);
             toolTip1.SetToolTip(comboBox3, reservedMemory);
-            toolTip1.SetToolTip(button_DOF, dinamicDOF);
-            toolTip1.SetToolTip(label8, dinamicDOF);
             toolTip1.SetToolTip(button_Compress, compressMemory);
             toolTip1.SetToolTip(label9, compressMemory);
-            toolTip1.SetToolTip(label11, ambOcc);
-            toolTip1.SetToolTip(button_AO, ambOcc);
             toolTip1.SetToolTip(button_WaitBuffer, waitBuffer);
             toolTip1.SetToolTip(label6, waitBuffer);
             toolTip1.SetToolTip(label14, occlusionCulling);
             toolTip1.SetToolTip(button_OC, occlusionCulling);
+            toolTip1.SetToolTip(label17, expandMemory);
+            toolTip1.SetToolTip(buttonExpandMemory, expandMemory);
             refreshFileList();
             refreshAllValue();
         }
@@ -67,32 +62,28 @@ namespace SLMPLauncher
         }
         private void langTranslateEN()
         {
-            ambOcc = "Adds additional shading to objects, reduces performance.";
             button_deleteAllENB.Text = "UnInstall";
             button_unpackENB.Text = "Install";
             compressMemory = "Compress video memory to reduce its volume, reduces performance.";
             confirmTitle = "Confirm";
-            dinamicDOF = "Depth Of Field - dynamic blur of the background, focus.";
-            label10.Text = @"Files from Skyrim\ENB:";
-            label11.Text = "Ambient occlusion:";
+            label10.Text = @"Files from Skyrim\ENB";
             label12.Text = "System settings";
             label13.Text = "Filtration:";
             label14.Text = "Occlusion culling:";
             label15.Text = "Auto video memory:";
             label16.Text = "Video memory:";
-            label2.Text = "Night brightness:";
+            label17.Text = "Shift memory:";
             label3.Text = "Reserved:";
             label4.Text = "Antialiasing:";
             label5.Text = "FPS limit:";
             label6.Text = "Wait busy renderer:";
-            label7.Text = "Game settings";
-            label8.Text = "Depth of field:";
             label9.Text = "Compress memory:";
             noFileSelect = "No file select.";
-            occlusionCulling = "Occlusion Culling - function to disable the rendering of hidden objects, can cause flicker.";
+            occlusionCulling = "Disable the rendering of hidden objects, can cause flicker.";
             removeENBFiles = "Delete all ENB files?";
             reservedMemory = "Reservation of memory for ENB effects.";
             waitBuffer = "Waiting for the frame to complete the video adapter, reduces performance.";
+            expandMemory = "Shifts the address space of the game, it can cause a crash on the first load.";
         }
         private void FormENB_KeyDown(object sender, KeyEventArgs e)
         {
@@ -108,14 +99,12 @@ namespace SLMPLauncher
             refreshMemory();
             refreshAA();
             refreshAF();
-            refresDOF();
             refreshFPS();
-            refresAmbOcc();
             refresWaitBuffer();
             refresAutoDetect();
             refresCompressMemory();
             refresOcclusionCulling();
-            refreshNightBrightness();
+            refresbuttonExpandMemory();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void refreshFileList()
@@ -244,47 +233,6 @@ namespace SLMPLauncher
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (setupENB)
-            {
-                double value = FuncParser.stringToDouble(comboBox4.SelectedItem.ToString()) - nightBrightness;
-                FuncMisc.changeENBBrightness(pathENBSeriesINI, "ENVIRONMENT", "AmbientLightingIntensityNight", value);
-                foreach (string line in Directory.GetFiles(FormMain.pathGameFolder + @"ENBSeries\", "*.ini"))
-                {
-                    if (FuncParser.keyExists(line, "ENVIRONMENT", "AmbientLightingIntensityNight"))
-                    {
-                        FuncMisc.changeENBBrightness(line, "ENVIRONMENT", "AmbientLightingIntensityNight", value);
-                    }
-                }
-                FuncParser.iniWrite(FormMain.pathLauncherINI, "ENB", "NightBrightness", comboBox4.SelectedItem.ToString());
-            }
-        }
-        private void refreshNightBrightness()
-        {
-            if (setupENB)
-            {
-                comboBox4.Enabled = true;
-                nightBrightness = FuncParser.doubleRead(FormMain.pathLauncherINI, "ENB", "NightBrightness");
-                FuncMisc.refreshComboBox(comboBox4, new List<double>() { -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5 }, nightBrightness, false, comboBox4_SelectedIndexChanged);
-            }
-            else
-            {
-                comboBox4.SelectedIndex = -1;
-                comboBox4.Enabled = false;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void button_DOF_Click(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(pathENBSeriesINI, "EFFECT", "EnableDepthOfField", (!dof).ToString().ToLower());
-            refresDOF();
-        }
-        private void refresDOF()
-        {
-            dof = FuncMisc.refreshButton(button_DOF, pathENBSeriesINI, "EFFECT", "EnableDepthOfField", null, false);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_Compress_Click(object sender, EventArgs e)
         {
             FuncParser.iniWrite(pathENBLocalINI, "MEMORY", "EnableCompression", (!compress).ToString().ToLower());
@@ -295,16 +243,6 @@ namespace SLMPLauncher
             compress = FuncMisc.refreshButton(button_Compress, pathENBLocalINI, "MEMORY", "EnableCompression", null, false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void button_AO_Click(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(pathENBSeriesINI, "EFFECT", "EnableAmbientOcclusion", (!ambocc).ToString().ToLower());
-            refresAmbOcc();
-        }
-        private void refresAmbOcc()
-        {
-            ambocc = FuncMisc.refreshButton(button_AO, pathENBSeriesINI, "EFFECT", "EnableAmbientOcclusion", null, false);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_WaitBuffer_Click(object sender, EventArgs e)
         {
             FuncParser.iniWrite(pathENBLocalINI, "LIMITER", "WaitBusyRenderer", (!waitbuffer).ToString().ToLower());
@@ -313,6 +251,16 @@ namespace SLMPLauncher
         private void refresWaitBuffer()
         {
             waitbuffer = FuncMisc.refreshButton(button_WaitBuffer, pathENBLocalINI, "LIMITER", "WaitBusyRenderer", null, false);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonExpandMemory_Click(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(pathENBLocalINI, "MEMORY", "ExpandSystemMemoryX64", (!expandmemory).ToString().ToLower());
+            refresbuttonExpandMemory();
+        }
+        private void refresbuttonExpandMemory()
+        {
+            expandmemory = FuncMisc.refreshButton(buttonExpandMemory, pathENBLocalINI, "MEMORY", "ExpandSystemMemoryX64", null, false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_OC_Click(object sender, EventArgs e)

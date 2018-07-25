@@ -19,8 +19,6 @@ namespace SLMPLauncher
         string predictFPS = "Отвечает за правильную работу игры при разном FPS.";
         string redateMods = "Массовое изменение даты изменения файлов по возрастанию.";
         string shadowResolution = "Изменение самого \"тяжелого\" параметра теней.";
-        string toggleWeaponsNotify = "У этой игровой опции существует конфликт, в частности с арбалетами. Если у вас в руках зависает модель другого оружия, нежели которое вы выбрали, то отключите эту опцию.";
-        string weaponFavorite = "Отображение на персонаже оружия находящегося в категории избранного.";
         DateTime lastWriteData = Directory.GetLastWriteTime(pathDataFolder);
         List<string> listToListESM = new List<string>();
         List<string> listToListESP = new List<string>();
@@ -38,7 +36,6 @@ namespace SLMPLauncher
         bool rsky = false;
         bool rtree = false;
         bool vsync = false;
-        bool weapons = false;
         bool window = false;
 
         public FormOptions()
@@ -59,8 +56,6 @@ namespace SLMPLauncher
             toolTip1.SetToolTip(label21TAB, grassDensity);
             toolTip1.SetToolTip(label22TAB, grassDensity);
             toolTip1.SetToolTip(trackBarGrassTAB, grassDensity);
-            toolTip1.SetToolTip(label8, weaponFavorite);
-            toolTip1.SetToolTip(button_ToggleWeapons, weaponFavorite);
             toolTip1.SetToolTip(button_RedateMods, redateMods);
             toolTip1.SetToolTip(label5, predictFPS);
             toolTip1.SetToolTip(comboBoxPredictFPS, predictFPS);
@@ -135,13 +130,10 @@ namespace SLMPLauncher
             label40TAB.Text = "Display index:";
             label5.Text = "Expected FPS:";
             label7.Text = "Master files:";
-            label8.Text = "Equip Favorites:";
             label9.Text = "Papyrus logs:";
             predictFPS = "Responsible for the correct operation of the game with different FPS.";
             redateMods = "Mass change of the date of change of files in ascending order.";
             shadowResolution = "Changing the \"heaviest\" shadow parameter.";
-            toggleWeaponsNotify = "This game option has a conflict, in particular with crossbows. If at you in hands hangs model of other weapon, rather than which you have chosen, disable this option.";
-            weaponFavorite = "Displaying a weapon in the category of favorites on the character.";
         }
         private void FormOptions_KeyDown(object sender, KeyEventArgs e)
         {
@@ -166,7 +158,6 @@ namespace SLMPLauncher
             refreshWindow();
             refreshVsync();
             refreshGrass();
-            refreshbuttonToggleWeapons();
             refreshValueLabelPapyrus();
             refreshObjects();
             refreshActors();
@@ -594,7 +585,31 @@ namespace SLMPLauncher
             }
             catch
             {
-                comboBoxResolutionTAB.Enabled = false;
+                bool stop = false;
+                List<int> W = new List<int>();
+                List<int> H = new List<int>();
+                foreach (var list in FuncResolutions.Resolutions())
+                {
+                    if (!stop)
+                    {
+                        W.AddRange(list);
+                        stop = true;
+                    }
+                    else
+                    {
+                        H.AddRange(list);
+                        break;
+                    }
+                }
+                if (W.Count == H.Count)
+                {
+                    for (int i = 0; i < W.Count; i++)
+                    {
+                        addResolution(W[i], H[i]);
+                    }
+                }
+                W.Clear();
+                H.Clear();
             }
             for (int i = 0; i < screenListW.Count; i++)
             {
@@ -786,20 +801,6 @@ namespace SLMPLauncher
         private void refreshWaterReflect()
         {
             FuncMisc.refreshComboBox(comboBoxWaterReflectTAB, new List<double>() { 512, 1024, 2048 }, FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Water", "iWaterReflectWidth"), false, comboBoxWaterReflect_SelectedIndexChanged);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void button_ToggleWeapons_Click(object sender, EventArgs e)
-        {
-            if (!weapons)
-            {
-                MessageBox.Show(toggleWeaponsNotify);
-            }
-            FuncParser.iniWrite(FormMain.pathSkyrimINI, "General", "bDisableGearedUp", Convert.ToInt32(weapons).ToString());
-            refreshbuttonToggleWeapons();
-        }
-        private void refreshbuttonToggleWeapons()
-        {
-            weapons = FuncMisc.refreshButton(button_ToggleWeapons, FormMain.pathSkyrimINI, "General", "bDisableGearedUp", null, true);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void button_Papyrus_Click(object sender, EventArgs e)

@@ -210,23 +210,6 @@ namespace SLMPLauncher
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        public static void changeENBBrightness(string line, string section, string param, double value)
-        {
-            string writeLine = CheckDot((FuncParser.doubleRead(line, section, param) + value).ToString().Replace(",", "."));
-            FuncParser.iniWrite(line, section, param, writeLine);
-        }
-        private static string CheckDot(string line)
-        {
-            if (!line.Contains("."))
-            {
-                return line += ".0";
-            }
-            else
-            {
-                return line;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static void wideScreenMods()
         {
             if (FuncParser.intRead(FormMain.pathLauncherINI, "General", "AspectRatio") == 4)
