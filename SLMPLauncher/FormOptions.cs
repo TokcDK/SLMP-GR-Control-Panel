@@ -526,15 +526,15 @@ namespace SLMPLauncher
                         MessageBox.Show(errorDateChange + line);
                     }
                 }
-                for (int i = 0; i < listView1.Items.Count; i++)
+                foreach (ListViewItem item in listView1.CheckedItems)
                 {
                     try
                     {
-                        File.SetLastWriteTime(pathDataFolder + listView1.Items[i].Text, dt);
+                        File.SetLastWriteTime(pathDataFolder + item.Text, dt);
                     }
                     catch
                     {
-                        MessageBox.Show(errorDateChange + pathDataFolder + listView1.Items[i].Text);
+                        MessageBox.Show(errorDateChange + pathDataFolder + item.Text);
                     }
                     dt = dt.AddMinutes(1);
                 }
@@ -573,53 +573,34 @@ namespace SLMPLauncher
             screenListW.Clear();
             screenListH.Clear();
             comboBoxResolutionTAB.Items.Clear();
-            int width = FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iSize W");
-            int height = FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iSize H");
-            addResolution(width, height);
+            addResolution(FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iSize W"), FuncParser.intRead(FormMain.pathSkyrimPrefsINI, "Display", "iSize H"));
+            bool fail = false;
             try
             {
-                foreach (var result in new ManagementObjectSearcher(new ManagementScope(), new ObjectQuery("SELECT * FROM CIM_VideoControllerResolution")).Get())
+                var scope = new ManagementScope();
+                var query = new ObjectQuery("SELECT * FROM CIM_VideoControllerResolution");
+                using (var searcher = new ManagementObjectSearcher(scope, query))
                 {
-                    addResolution(FuncParser.stringToInt(result["HorizontalResolution"].ToString()), FuncParser.stringToInt(result["VerticalResolution"].ToString()));
+                    var results = searcher.Get();
+                    foreach (var result in results)
+                    {
+                        addResolution(FuncParser.stringToInt(result["HorizontalResolution"].ToString()), FuncParser.stringToInt(result["VerticalResolution"].ToString()));
+                    }
                 }
             }
             catch
             {
-                bool stop = false;
-                List<int> W = new List<int>();
-                List<int> H = new List<int>();
-                foreach (var list in FuncResolutions.Resolutions())
-                {
-                    if (!stop)
-                    {
-                        W.AddRange(list);
-                        stop = true;
-                    }
-                    else
-                    {
-                        H.AddRange(list);
-                        break;
-                    }
-                }
-                if (W.Count == H.Count)
-                {
-                    for (int i = 0; i < W.Count; i++)
-                    {
-                        addResolution(W[i], H[i]);
-                    }
-                }
-                W.Clear();
-                H.Clear();
+                fail = true;
             }
-            for (int i = 0; i < screenListW.Count; i++)
+            if (fail || comboBoxResolutionTAB.Items.Count < 2)
             {
-                if (screenListW[i] == width && screenListH[i] == height)
+                foreach (string line in FuncResolutions.Resolutions())
                 {
-                    comboBoxResolutionTAB.SelectedIndexChanged -= comboBoxResolution_SelectedIndexChanged;
-                    comboBoxResolutionTAB.SelectedIndex = i;
-                    comboBoxResolutionTAB.SelectedIndexChanged += comboBoxResolution_SelectedIndexChanged;
+                    int divider = line.IndexOf("/");
+                    addResolution(FuncParser.stringToInt(line.Remove(divider)), FuncParser.stringToInt(line.Remove(0, divider + 1)));
                 }
             }
+            comboBoxResolutionTAB.SelectedIndex = 0;
             setAspectRatioFiles();
         }
         private void addResolution(int width, int height)
@@ -638,11 +619,12 @@ namespace SLMPLauncher
             {
                 double[] arlist = new double[] { 1.3, 1.4, 1.7, 1.8, 2.5 };
                 double ar = (double)screenListW[comboBoxResolutionTAB.SelectedIndex] / screenListH[comboBoxResolutionTAB.SelectedIndex];
+                int arl = FuncParser.intRead(FormMain.pathLauncherINI, "General", "AspectRatio");
                 for (int i = 0; i < arlist.Length; i++)
                 {
                     if (ar <= arlist[i])
                     {
-                        if (FuncParser.intRead(FormMain.pathLauncherINI, "General", "AspectRatio") != i)
+                        if (arl != i)
                         {
                             FuncMisc.unpackRAR(FormMain.pathLauncherFolder + @"CPFiles\System\AR(" + i.ToString() + ").rar");
                             FuncParser.iniWrite(FormMain.pathLauncherINI, "General", "AspectRatio", i.ToString());

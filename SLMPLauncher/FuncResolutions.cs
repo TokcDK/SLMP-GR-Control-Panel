@@ -49,26 +49,22 @@ namespace SLMPLauncher
             public int dmPanningHeight;
         }
 
-        public static List<List<int>> Resolutions()
+        public static List<string> Resolutions()
         {
-            List<List<int>> list = new List<List<int>>();
-            list.Add(new List<int>());
-            list.Add(new List<int>());
+            List<string> list = new List<string>();
             DEVMODE vDevMode = new DEVMODE();
             int i = 0;
             try
             {
                 while (EnumDisplaySettings(null, i, ref vDevMode))
                 {
-                    list[0].Add(vDevMode.dmPelsWidth);
-                    list[1].Add(vDevMode.dmPelsHeight);
+                    list.Add(vDevMode.dmPelsWidth.ToString() + "/" + vDevMode.dmPelsHeight.ToString());
                     i++;
                 }
             }
             catch
             {
-                list[0].Clear();
-                list[1].Clear();
+                list.Clear();
             }
             return list;
         }
