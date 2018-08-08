@@ -1,6 +1,8 @@
 # SLMP-GR-Control-Panel
 Launcher for SLMP-GR
 
+Support Russian\English localization
+
 ![alt text](https://i.imgur.com/L5gyYaH.jpg)
 
 ![alt text](https://i.imgur.com/3enTIkT.jpg)
